@@ -3,7 +3,7 @@
 @section("content")
 <h3>Data Anggota</h3>
  
-	<a href="/anggota/tambah"> + Tambah Anggota Baru</a>
+	<a href="/anggota/tambah"><p class="text-warning">+ Tambah Anggota Baru</p></a>
 	
 	<br/>
 	<br/>

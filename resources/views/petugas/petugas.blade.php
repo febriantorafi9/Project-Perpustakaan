@@ -3,7 +3,7 @@
 @section("content")
 <h3>Data Petugas</h3>
  
-	<a href="/petugas/tambah"> + Tambah Petugas Baru</a>
+	<a href="/petugas/tambah"><p class="text-warning">+ Tambah Petugas Baru</p></a>
 	
 	<br/>
 	<br/>
