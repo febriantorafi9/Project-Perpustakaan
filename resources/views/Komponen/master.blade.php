@@ -33,11 +33,16 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/pengembalian">Pengembalian</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Rak">Rak</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Buku">Buku</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Pengadaan
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Rak</a>
+                                    <a class="dropdown-item" href="#">Buku</a>
+                                <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
                             </li>
                     </ul>
                 </div>
