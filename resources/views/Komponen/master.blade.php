@@ -10,11 +10,11 @@
         <style>
             body{background-color:#A63F0C}
         </style>
-    <title>Ruang Baca Kita</title>
+    <title>Ruang Baca</title>
   </head>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container">
-                <a class="navbar-brand" href="#">Ruang Baca Kita</a>
+                <a class="navbar-brand" href="#">Ruang Baca Pras dan Rafi</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                     </button>
@@ -36,10 +36,10 @@
                                 <a class="nav-link" href="/pengembalian">Pengembalian</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Rak">Rak</a>
+                                <a class="nav-link" href="/rak">Rak</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Buku">Buku</a>
+                                <a class="nav-link" href="/buku">Buku</a>
                             </li>
                     </ul>
                 </div>

@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class bukuControllers extends Controller
+class bukuController extends Controller
 {
     public function buku()
     {
         // mengambil data dari table buku
-        $buku = DB::table('buku') -> get();
+        $buku = DB::table('buku')->get();
 
         // mengirim data buku ke view master
         return view('/buku/buku',['buku' => $buku]);
@@ -18,16 +18,16 @@ class bukuControllers extends Controller
 
     public function tambah()
     {
-        return('/buku/tambah');
+        return view('/buku/tambah');
     }
 
-    public function simpan($request)
+    public function simpan(Request $request)
     {
         DB::table('buku')->insert([
             'id_buku' => $request -> id_buku,
             'judul_buku' => $request -> judul_buku,
             'penerbit' => $request -> penerbit,
-            'tahun_penerbit' => $request -> tahun_penerbit,
+            'tahun_terbit' => $request -> tahun_terbit,
             'stok' => $request -> stok
         ]);
         //mengalihkan ke halaman buku
@@ -36,7 +36,7 @@ class bukuControllers extends Controller
 
     public function edit($id_buku)
     {
-        $buku = DB::table('buku') -> where('id_buku',$request -> id_buku) ->get();
+        $buku = DB::table('buku')->where('id_buku',$id_buku)->get();
         return view('/buku/edit',['buku' => $buku]);
     }
 
@@ -46,7 +46,7 @@ class bukuControllers extends Controller
             'id_buku' => $request -> id_buku,
             'judul_buku' => $request -> judul_buku,
             'penerbit' => $request -> penerbit,
-            'tahun_penerbit' => $request -> tahun_penerbit,
+            'tahun_terbit' => $request -> tahun_terbit,
             'stok' => $request -> stok
         ]);
         return redirect('/buku');

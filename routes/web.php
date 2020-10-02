@@ -40,6 +40,7 @@ route::get('petugas/tambah','petugasController@tambah');
 route::get('petugas/simpan','petugasController@simpan');
 route::get('petugas/edit/{id_petugas}','petugasController@edit');
 route::get('petugas/update','petugasController@update');
+route::get('petugas/hapus/{id_petugas}','petugasController@hapus');
 
 //Buku
 route::get('buku','bukuController@buku');

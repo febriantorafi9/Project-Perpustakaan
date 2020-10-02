@@ -6,11 +6,24 @@
         <a href="/rak">kembali</a>
         <br> 
         <br>
-        <form action="/rak/simpan" method = "get">
-        {{csrf_field() }}
-            ID Rak <input type="text" name="id_rak" required="required">
-            Nama Rak <input type="text" name="nama_rak" required="required">
-            Lokasi Rak <input type="text" name="lokasi_rak" required="required">
-            ID Buku <input type="text" name="id_buku" required="required">
-            <input type="submit" value="simpan rak">
-        </form> 
+        <form action="/rak/simpan" method="get">
+        {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="exampleInputEmail1">ID Rak</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_rak" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nama Rak</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama_rak" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Lokasi Rak</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="lokasi_rak" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">ID Buku</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_buku" required="required">
+                </div>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
+@endsection

@@ -54,6 +54,12 @@ class petugasController extends Controller
         return redirect('/petugas');
     }
 
+    public function hapus(Request $request)
+    {
+        //menghapus data rak
+        DB::table('petugas')->where('id_petugas',$request->id_petugas)->delete();
+        return redirect('/petugas');
+    }
 
 
 }
