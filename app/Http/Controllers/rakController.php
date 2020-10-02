@@ -15,7 +15,8 @@ class rakController extends Controller
 
     public function tambah()
     {
-        return view('/rak/tambah');
+        $buku = DB::table('buku')-> get();
+        return view('/rak/tambah',['buku' => $buku]);
     }
         
 

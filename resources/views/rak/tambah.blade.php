@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">ID Buku</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_buku" required="required">
+                    <select name="id_buku" required="required">@foreach ($buku as $b)<option value="{{ $b -> id_buku }}">{{$b -> judul_buku}}</option>@endforeach</select>
                 </div>
               <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
