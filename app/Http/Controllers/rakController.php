@@ -40,10 +40,10 @@ class rakController extends Controller
     public function update(Request $request)
     {
         DB::table('rak')->where('id_rak',$request->id_rak) -> update([
-            'id_rak' => $request -> id_rak,
-            'nama_rak' => $request -> nama_rak,
-            'lokasi_rak' => $request -> lokasi_rak,
-            'id_buku' => $request -> id_buku
+            'id_rak' => $request ->id_rak,
+            'nama_rak' => $request ->nama_rak,
+            'lokasi_rak' => $request ->lokasi_rak,
+            'id_buku' => $request ->id_buku
         ]);
         return redirect('/rak');
     }

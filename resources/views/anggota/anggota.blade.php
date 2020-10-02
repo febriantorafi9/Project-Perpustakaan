@@ -8,7 +8,7 @@
 	<br/>
 	<br/>
  
-	<table class="table table-dark">
+	<table class="table table-striped table-dark">
 		<tr>
             <th>ID</th>
 			<th>Nama</th>

@@ -3,7 +3,7 @@
 @section('content')
     <h2><p class = "text-secondry">Edit Data Buku</p></h2>
         <br>
-        <a href="/buku">kembali</a>
+        <a href="/buku" class="btn btn-warning">kembali</a>
         <br> 
         <br>
         <form action="/buku/simpan" method="get">
@@ -13,12 +13,8 @@
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_buku" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nama Rak</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="judul_buku" required="required">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Judul Buku</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="lokasi_rak" required="required">
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="judul_buku" required="required">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Penerbit</label>

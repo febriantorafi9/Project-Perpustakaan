@@ -24,11 +24,11 @@ class bukuController extends Controller
     public function simpan(Request $request)
     {
         DB::table('buku')->insert([
-            'id_buku' => $request -> id_buku,
-            'judul_buku' => $request -> judul_buku,
-            'penerbit' => $request -> penerbit,
-            'tahun_terbit' => $request -> tahun_terbit,
-            'stok' => $request -> stok
+            'id_buku' => $request ->id_buku,
+            'judul_buku' => $request ->judul_buku,
+            'penerbit' => $request ->penerbit,
+            'tahun_terbit' => $request ->tahun_terbit,
+            'stok' => $request ->stok
         ]);
         //mengalihkan ke halaman buku
         return redirect('/buku');
@@ -43,11 +43,11 @@ class bukuController extends Controller
     public function update(Request $request)
     {
         DB::table('buku')->where('id_buku',$request->id_buku) -> update([
-            'id_buku' => $request -> id_buku,
-            'judul_buku' => $request -> judul_buku,
-            'penerbit' => $request -> penerbit,
-            'tahun_terbit' => $request -> tahun_terbit,
-            'stok' => $request -> stok
+            'id_buku' => $request ->id_buku,
+            'judul_buku' => $request ->judul_buku,
+            'penerbit' => $request ->penerbit,
+            'tahun_terbit' => $request ->tahun_terbit,
+            'stok' => $request ->stok
         ]);
         return redirect('/buku');
     }

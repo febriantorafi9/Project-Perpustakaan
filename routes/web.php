@@ -48,6 +48,7 @@ route::get('buku/tambah','bukuController@tambah');
 route::get('buku/simpan','bukuController@simpan');
 route::get('buku/edit/{id_buku}','bukuController@edit');
 route::get('buku/update','bukuController@update');
+route::get('buku/hapus/{id_buku}','bukuController@hapus');
 
 //Rak
 route::get('rak','rakController@rak');
@@ -55,3 +56,4 @@ route::get('rak/tambah','rakController@tambah');
 route::get('rak/simpan','rakController@simpan');
 route::get('rak/edit/{id_rak}','rakController@edit');
 route::get('rak/update','rakController@update');
+route::get('rak/hapus/{id_rak}','rakController@hapus');

@@ -3,7 +3,7 @@
 @section('content')
     <h2><p class = "text-secondry">Edit Data Rak</p></h2>
         <br>
-        <a href="/rak">kembali</a>
+        <a href="/rak" class="btn btn-warning">kembali</a>
         <br> 
         <br>
         <form action="/rak/simpan" method="get">
