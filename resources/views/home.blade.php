@@ -21,7 +21,7 @@
                 </div>
         </div>
     <div class="container">
-        <h1><p class="text-warning">Welcome to Ruang Baca Kita</p></h1>
+          <h1><p class="text-warning">Welcome to Ruang Baca Kita</p></h1>
         <hr/>
         <h5><p class="bg-warning text-white">Membaca bagi pikiran seperti olahraga bagi tubuh.
 

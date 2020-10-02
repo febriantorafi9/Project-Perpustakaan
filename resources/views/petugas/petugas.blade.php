@@ -3,12 +3,12 @@
 @section("content")
 <h3>Data Petugas</h3>
  
-	<a href="/petugas/tambah"><p class="text-warning">+ Tambah Petugas Baru</p></a>
+	<a href="/petugas/tambah" class="btn btn-success">+ Tambah Petugas Baru</a>
 	
 	<br/>
 	<br/>
  
-	<table border="2">
+	<table class="table table-striped table-dark">
 		<tr>
             <th>ID</th>
 			<th>Nama</th>
@@ -27,9 +27,9 @@
 			<td>{{ $p->no_telp_petugas }}</td>
             <td>{{ $p->alamat_petugas }}</td>
 			<td>
-				<a href="/petugas/edit/{{ $p->id_petugas }}">Edit</a>
+				<a href="/petugas/edit/{{ $p->id_petugas }}" class="btn btn-info">Edit</a>
 				|
-				<a href="/petugas/hapus/{{ $p->id_petugas }}">Hapus</a>
+				<a href="/petugas/hapus/{{ $p->id_petugas }}" class="btn btn-info">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
