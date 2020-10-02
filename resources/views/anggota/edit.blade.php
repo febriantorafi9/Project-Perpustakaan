@@ -1,7 +1,7 @@
 @extends('/komponen/master')
 
 @section('content')
-        <h2><p class="text-dark">Update Anggota</p></h2>
+        <h2>Update Anggota</h2>
             <br/>
                 <a href="/anggota" class="btn btn-warning">kembali</a>
             <br/>
