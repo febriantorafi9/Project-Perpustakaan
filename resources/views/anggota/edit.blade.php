@@ -29,7 +29,7 @@
                     <label for="exampleInputEmail1">Alamat</label>
                     <input type="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="alamat" required="required" value="{{$c->alamat}}">
                 </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">submit</button>
             </form>
             @endforeach
 @endsection
