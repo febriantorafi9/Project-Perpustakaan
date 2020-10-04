@@ -16,15 +16,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/peminjaman', function () {
-    return view('Komponen/master');
-});
-
-Route::get('/pengembalian', function () {
-    return view('Komponen/master');
-});
-
-
 //Anggota
 route::get('anggota','anggotaController@anggota');
 route::get('anggota/tambah','anggotaController@tambah');
@@ -57,3 +48,19 @@ route::get('rak/simpan','rakController@simpan');
 route::get('rak/edit/{id_rak}','rakController@edit');
 route::get('rak/update','rakController@update');
 route::get('rak/hapus/{id_rak}','rakController@hapus');
+
+//Pengembalian
+route::get('pengembalian','pengembalianController@pengembalian');
+route::get('pengembalian/tambah','pengembalianController@tambah');
+route::get('pengembalian/simpan','pengembalianController@simpan');
+route::get('pengembalian/edit/{id_pengembalian}','pengembalianController@edit');
+route::get('pengembalian/update','pengembalianController@update');
+route::get('pengembalian/hapus/{id_pengembalian}','pengembalianController@hapus');
+
+//Peminjaman
+route::get('peminjaman','peminjamanController@peminjaman');
+route::get('peminjaman/tambah','peminjamanController@tambah');
+route::get('peminjaman/simpan','peminjamanController@simpan');
+route::get('peminjaman/edit/{id_peminjaman}','peminjamanController@edit');
+route::get('peminjaman/update','peminjamanController@update');
+route::get('peminjaman/hapus/{id_peminjaman}','pengembalianController@hapus');
