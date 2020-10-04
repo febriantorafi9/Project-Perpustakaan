@@ -1,7 +1,7 @@
 @extends('/komponen/master')
 
 @section('content')
-    <h2><p class = "text-secondry">Edit Data Rak</p></h2>
+    <h2><p class = "text-secondry">Tambah Data Rak</p></h2>
         <br>
         <a href="/rak" class="btn btn-warning">kembali</a>
         <br> 
