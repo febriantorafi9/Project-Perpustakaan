@@ -3,7 +3,7 @@
 @section("content")
 <h3>Data Peminjaman</h3>
  
-	<a href="/peminjaman/tambah" class="btn btn-success">+ Tambah Peminjaman Baru</a>
+	<a href="/peminjaman/tambah" class="btn btn-success">+ Peminjaman Baru</a>
 	
 	<br/>
 	<br/>
