@@ -16,6 +16,7 @@
 			<th>ID Anggota</th>
 			<th>Tgl Pinjam</th>
             <th>Tgl Kembali</th>
+			<th>Navigasi</th>
 		</tr>
 		@foreach($peminjaman as $m)
 		<tr>
