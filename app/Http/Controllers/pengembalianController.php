@@ -40,7 +40,7 @@ class pengembalianController extends Controller
         return redirect('/pengembalian');
     }
 
-    public function edit()
+    public function edit($id_pengembalian)
     {
         $pengembalian = DB::table('pengembalian')->where('id_pengembalian',$id_pengembalian)->get();
         return view('/pengembalian/edit',['pengembalian' => $pengembalian]);
@@ -50,7 +50,7 @@ class pengembalianController extends Controller
     {
         DB::table('pengembalian')->where('id_pengembalian',$request->id_pengembalian)->update([
             'id_pengembalian' => $request->id_pengembalian,
-            'id_buku'=>$request->$request->id_buku,
+            'id_buku'=>$request->id_buku,
             'id_petugas'=>$request->id_petugas,
             'id_anggota'=>$request->id_anggota,
             'tgl_kembali'=>$request->tgl_kembali
