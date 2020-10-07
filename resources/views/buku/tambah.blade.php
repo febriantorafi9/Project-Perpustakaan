@@ -1,7 +1,7 @@
 @extends('/komponen/master')
 
 @section('content')
-    <h2>Edit Data Buku</h2>
+    <h2>Tambah Data Buku</h2>
         <br>
         <a href="/buku" class="btn btn-warning">kembali</a>
         <br> 
