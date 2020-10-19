@@ -1,6 +1,6 @@
-@extends('komponen/master')
+@extends('komponen/master2')
 
-@section("content")
+@section("konten")
 <h3>Data Anggota</h3>
  
 	<a href="/anggota/tambah" class="btn btn-success">+ Tambah Anggota Baru</a>

@@ -1,6 +1,6 @@
-@extends('/komponen/master')
+@extends('/komponen/master2')
 
-@section('content')
+@section('konten')
     <h2>Tambah Data Buku</h2>
         <br>
         <a href="/buku" class="btn btn-warning">kembali</a>

@@ -1,6 +1,6 @@
-@extends('/komponen/master')
+@extends('/komponen/master2')
 
-@section('content')
+@section('konten')
     <h2><p class = "text-secondry">Tambah Data Peminjaman</p></h2>
         <br>
         <a href="/peminjaman" class="btn btn-warning">kembali</a>

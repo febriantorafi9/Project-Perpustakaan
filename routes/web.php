@@ -14,7 +14,7 @@ use illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('beranda');
 
 //Anggota
 route::get('anggota','anggotaController@anggota');
