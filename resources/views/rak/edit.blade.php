@@ -10,20 +10,12 @@
                 <form action="/rak/update" method="get">
                 {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="exampleInputEmail1">ID Rak</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_rak" required="required" value="{{$k->id_rak}}">
-                    </div>
-                    <div class="form-group">
                         <label for="exampleInputEmail1">Nama Rak</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama_rak" required="required" value="{{$k->nama_rak}}">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Lokasi Rak</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="lokasi_rak" required="required" value="{{$k->lokasi_rak}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">ID Buku</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_buku" required="required" value="{{$k->id_buku}}">
                     </div>
                 <button type="submit" class="btn btn-primary">Update</button>
                 </form>

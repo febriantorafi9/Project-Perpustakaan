@@ -18,9 +18,9 @@
             <h5 class="card-title text-center align-middle text-white m-auto pt-5" style="font-size:50px;text-shadow: 1px 3px 8px grey"></h5>
             </div>
           </div>
-          <h1><p class="text-warning">Welcome to Ruang Baca Kita</p></h1>
+          <h1><p class="text-dark">Welcome to Ruang Baca Kita</p></h1>
         <hr/>
-        <h5><p class="bg-warning text-white">Membaca bagi pikiran seperti olahraga bagi tubuh.
+        <h5><p class="bg-dark text-white">Membaca bagi pikiran seperti olahraga bagi tubuh.
 
         Cintai aku dengan membaca, aku akan mencintaimu dengan menulis.
 

@@ -9,10 +9,6 @@
         <form action="/peminjaman/simpan" method="get">
         {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID Peminjaman</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_peminjaman" required="required">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">ID Buku</label>
                     <select name="id_buku" required="required">@foreach ($buku as $b)<option value="{{ $b -> id_buku }}">{{$b -> judul_buku}}</option>@endforeach</select>
                 </div>

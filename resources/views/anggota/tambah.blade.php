@@ -9,10 +9,6 @@
             <form action="/anggota/simpan" method="get">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_anggota" required="required">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Nama</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama_anggota" required="required">
                 </div>

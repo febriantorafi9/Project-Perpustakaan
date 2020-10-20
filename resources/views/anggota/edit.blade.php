@@ -10,10 +10,6 @@
             <form action="/anggota/update" method="get">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_anggota" required="required" value="{{$c->id_anggota}}">
-                </div>
-                <div class="form-group">
                     <label for="exampleInputEmail1">Nama</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama_anggota" required="required" value="{{$c->nama_anggota}}">
                 </div>

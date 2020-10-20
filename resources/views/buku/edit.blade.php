@@ -10,10 +10,6 @@
             <form action="/buku/update" method="get">
                 {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="exampleInputEmail1">ID Buku</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="id_buku" required="required" value="{{$r->id_buku}}">
-                    </div>
-                    <div class="form-group">
                         <label for="exampleInputEmail1">Judul Buku</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="judul_buku" required="required" value="{{$r->judul_buku}}">
                     </div>
