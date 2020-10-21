@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Petugas;
 
 class petugasController extends Controller
 {
     public function petugas(){
         
         // mengambil data dari table petugas
-        $petugas = DB::table('petugas')->get();
- 
+        //$petugas = DB::table('petugas')->get();
+        $petugas = petugas::all();
+
         // mengirim data petugas ke view master
         return view('/petugas/petugas',['petugas' => $petugas]);
         
@@ -54,11 +56,15 @@ class petugasController extends Controller
         return redirect('/petugas');
     }
 
-    public function hapus(Request $request)
+    public function hapus($id)
     {
         //menghapus data rak
-        DB::table('petugas')->where('id_petugas',$request->id_petugas)->delete();
-        return redirect('/petugas');
+        /*DB::table('petugas')->where('id_petugas',$request->id_petugas)->delete();
+        return redirect('/petugas');*/
+
+        Petugas::find($id)->delete();
+        return redirect ('/petugas');
+
     }
 
 
