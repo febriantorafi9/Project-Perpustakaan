@@ -11,7 +11,7 @@ class anggotaController extends Controller
     {
         // mengambil data dari table anggota
         $anggota = DB::table('anggota')->get();
- 
+        
         // mengirim data petugas ke view anggota
         return view('/anggota/anggota',['anggota' => $anggota]);
     }
