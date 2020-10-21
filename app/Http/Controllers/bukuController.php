@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Buku;
 
 class bukuController extends Controller
 {
     public function buku()
     {
         // mengambil data dari table buku
-        $buku = DB::table('buku')->get();
-
+        //$buku = DB::table('buku')->get();
+        $buku = buku::all();
+        
         // mengirim data buku ke view master
         return view('/buku/buku',['buku' => $buku]);
     }
@@ -31,7 +33,7 @@ class bukuController extends Controller
             'stok' => $request ->stok
         ]);
         //mengalihkan ke halaman buku
-        return redirect('/buku');
+        return redirect('/buku')->with('status edit berhasil', 'Hore, Data Petugas Telah Diedit!');
     }
 
     public function edit($id_buku)
@@ -49,14 +51,18 @@ class bukuController extends Controller
             'tahun_terbit' => $request ->tahun_terbit,
             'stok' => $request ->stok
         ]);
-        return redirect('/buku');
+        return redirect('/buku')->with('status edit berhasil', 'Hore, Data Petugas Telah Diedit!');
     }
 
-    public function hapus(Request $request)
+    public function hapus($id)
     {
         //menghapus data buku
-        DB::table('buku')->where('id_buku',$request->id_buku)->delete();
-        return redirect('/buku');
+        /*DB::table('buku')->where('id_buku',$request->id_buku)->delete();
+        return redirect('/buku');*/
+
+        Buku::find($id)->delete();
+        return redirect ('/buku');
+
     }
 
 }

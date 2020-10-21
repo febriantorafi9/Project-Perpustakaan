@@ -13,8 +13,12 @@
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama_anggota" required="required">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Jenis Kelamin (isi L/P)</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="jenis_kelamin" required="required">
+                        <label for="jenis_kelamin_Anggota">Jenis Kelamin</label>
+                        <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
+                        <option>L</option>
+                        <option>P</option>
+      
+                        </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nomer Telepon</label>

@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Anggota;
 
 class anggotaController extends Controller
 {
     public function anggota()
     {
         // mengambil data dari table anggota
-        $anggota = DB::table('anggota')->get();
-        
+        //$anggota = DB::table('anggota')->get();
+        $anggota = anggota::all();
+
         // mengirim data petugas ke view anggota
         return view('/anggota/anggota',['anggota' => $anggota]);
     }
@@ -51,11 +53,15 @@ class anggotaController extends Controller
         return redirect('/anggota');
     }
 
-    public function hapus(Request $request)
+    public function hapus($id)
     {
         //menghapus data anggota
-        DB::table('anggota')->where('id_anggota',$request->id_anggota)->delete();
-        return redirect('/anggota');
+        /*DB::table('anggota')->where('id_anggota',$request->id_anggota)->delete();
+        return redirect('/anggota');*/
+
+        Anggota::find($id)->delete();
+        return redirect ('/anggota');
+
     }
 
 
