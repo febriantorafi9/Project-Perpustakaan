@@ -14,14 +14,23 @@ class petugasController extends Controller
         //$petugas = DB::table('petugas')->get();
         $petugas = petugas::all();
 
+        $data = array(
+            'menu' => 'petugas',
+            'submenu' => ''
+        );
+
         // mengirim data petugas ke view master
-        return view('/petugas/petugas',['petugas' => $petugas]);
+        return view('/petugas/petugas',['petugas' => $petugas],$data);
         
     }
 
     public function tambah()
     {
-        return view('/petugas/tambah');
+        $data = array(
+            'menu' => 'petugas',
+            'submenu' => ''
+        );
+        return view('/petugas/tambah',$data);
     }
 
     public function simpan(Request $request)
@@ -41,7 +50,11 @@ class petugasController extends Controller
     public function edit($id_petugas)
     {
         $petugas = DB::table('petugas')->where('id_petugas',$id_petugas)->get();
-        return view('/petugas/edit',['petugas' => $petugas]);
+        $data = array(
+            'menu' => 'petugas',
+            'submenu' => ''
+        );
+        return view('/petugas/edit',['petugas' => $petugas],$data);
     }
 
     public function update(Request $request)

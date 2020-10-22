@@ -10,11 +10,15 @@ class pengembalianController extends Controller
     public function pengembalian()
     {
          // mengambil data dari table pengembalian
-         //$pengembalian = DB::table('pengembalian')->get();
-         $pengembalian = pengembalian::all();
+         $pengembalian = DB::table('pengembalian')->get();
 
+         $data = array(
+	        'menu' => 'transaksi',
+	        'submenu' => 'pengembalian'
+         );
+ 
          // mengirim data petugas ke view peminjaman
-         return view('/pengembalian/pengembalian',['pengembalian' => $pengembalian]);
+         return view('/pengembalian/pengembalian',['pengembalian' => $pengembalian],$data);
     
     }
 
@@ -22,9 +26,13 @@ class pengembalianController extends Controller
     {
         
         $buku = DB::table('buku')-> get();
+        $data = array(
+	        'menu' => 'transaksi',
+	        'submenu' => 'pengembalian'
+         );
         $petugas = DB::table('petugas')-> get();
         $anggota = DB::table('anggota')-> get();
-        return view('/pengembalian/tambah',['buku' => $buku, 'petugas' => $petugas, 'anggota' => $anggota]);
+        return view('/pengembalian/tambah',['buku' => $buku, 'petugas' => $petugas, 'anggota' => $anggota],$data);
 
     }
 
@@ -44,7 +52,11 @@ class pengembalianController extends Controller
     public function edit($id_pengembalian)
     {
         $pengembalian = DB::table('pengembalian')->where('id_pengembalian',$id_pengembalian)->get();
-        return view('/pengembalian/edit',['pengembalian' => $pengembalian]);
+        $data = array(
+	        'menu' => 'transaksi',
+	        'submenu' => 'pengembalian'
+         );
+        return view('/pengembalian/edit',['pengembalian' => $pengembalian],$data);
     }
 
     public function update(Request $request)

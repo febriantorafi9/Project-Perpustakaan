@@ -9,17 +9,24 @@ class rakController extends Controller
 {
     public function rak()
     {
-        
-        //$rak = DB::table('rak') -> get();
-        $rak = rak::all();
-        
-        return view('/rak/rak',['rak' => $rak]);
+        $rak = DB::table('rak') -> get();
+
+        $data = array(
+            'menu' => 'rak',
+            'submenu' => ''
+        );
+
+        return view('/rak/rak',['rak' => $rak],$data);
     }
 
     public function tambah()
     {
         $buku = DB::table('buku')-> get();
-        return view('/rak/tambah',['buku' => $buku]);
+        $data = array(
+            'menu' => 'rak',
+            'submenu' => ''
+        );
+        return view('/rak/tambah',['buku' => $buku],$data);
     }
         
 
@@ -38,7 +45,11 @@ class rakController extends Controller
     public function edit($id_rak)
     {
         $rak = DB::table('rak')->where('id_rak',$id_rak)->get();
-        return view('/rak/edit',['rak' => $rak]);
+        $data = array(
+            'menu' => 'rak',
+            'submenu' => ''
+        );
+        return view('/rak/edit',['rak' => $rak],$data);
     }
 
     public function update(Request $request)
