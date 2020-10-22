@@ -10,8 +10,9 @@ class pengembalianController extends Controller
     public function pengembalian()
     {
          // mengambil data dari table pengembalian
-         $pengembalian = DB::table('pengembalian')->get();
- 
+         //$pengembalian = DB::table('pengembalian')->get();
+         $pengembalian = pengembalian::all();
+
          // mengirim data petugas ke view peminjaman
          return view('/pengembalian/pengembalian',['pengembalian' => $pengembalian]);
     
@@ -61,7 +62,9 @@ class pengembalianController extends Controller
     public function hapus(Request $request)
     {
         //menghapus data pengembalian
-        DB::table('pengembalian')->where('id_pengembalian',$request->id_pengembalian)->delete();
+        //DB::table('pengembalian')->where('id_pengembalian',$request->id_pengembalian)->delete();
+        
+        Pengembalian::find($id)->delete();
         return redirect('/pengembalian');
     }
 }

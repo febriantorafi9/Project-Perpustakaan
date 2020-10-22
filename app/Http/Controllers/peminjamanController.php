@@ -10,8 +10,9 @@ class peminjamanController extends Controller
     public function peminjaman()
     {
          // mengambil data dari table peminjaman
-         $peminjaman = DB::table('peminjaman')->get();
- 
+         //$peminjaman = DB::table('peminjaman')->get();
+         $peminjaman = peminjaman::all();
+
          // mengirim data petugas ke view peminjaman
          return view('/peminjaman/peminjaman',['peminjaman' => $peminjaman]);
     
@@ -63,7 +64,9 @@ class peminjamanController extends Controller
     public function hapus(Request $request)
     {
         //menghapus data peminjaman
-        DB::table('peminjaman')->where('id_peminjaman',$request->id_peminjaman)->delete();
+        //DB::table('peminjaman')->where('id_peminjaman',$request->id_peminjaman)->delete();
+
+        Peminjaman::find($id)->delete();
         return redirect('/peminjaman');
     }
 }

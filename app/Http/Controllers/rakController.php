@@ -9,7 +9,10 @@ class rakController extends Controller
 {
     public function rak()
     {
-        $rak = DB::table('rak') -> get();
+        
+        //$rak = DB::table('rak') -> get();
+        $rak = rak::all();
+        
         return view('/rak/rak',['rak' => $rak]);
     }
 
@@ -52,8 +55,12 @@ class rakController extends Controller
     public function hapus(Request $request)
     {
         //menghapus data rak
-        DB::table('rak')->where('id_rak',$request->id_rak)->delete();
-        return redirect('/rak');
+        //DB::table('rak')->where('id_rak',$request->id_rak)->delete();
+        //return redirect('/rak');
+
+        Rak::find($id)->delete();
+        return redirect ('/rak');
+
     }
 
 }
