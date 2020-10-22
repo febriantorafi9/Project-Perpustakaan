@@ -10,7 +10,13 @@ class rakController extends Controller
     public function rak()
     {
         $rak = DB::table('rak') -> get();
-        return view('/rak/rak',['rak' => $rak]);
+
+        $data = array(
+            'menu' => 'rak',
+            'submenu' => ''
+        );
+
+        return view('/rak/rak',['rak' => $rak],$data);
     }
 
     public function tambah()

@@ -14,8 +14,13 @@ class anggotaController extends Controller
         //$anggota = DB::table('anggota')->get();
         $anggota = anggota::all();
 
+        $data = array(
+            'menu' => 'anggota',
+            'submenu' => ''
+        );    
+
         // mengirim data petugas ke view anggota
-        return view('/anggota/anggota',['anggota' => $anggota]);
+        return view('/anggota/anggota',['anggota' => $anggota],$data);
     }
 
     public function tambah()

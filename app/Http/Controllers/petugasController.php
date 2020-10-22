@@ -14,8 +14,13 @@ class petugasController extends Controller
         //$petugas = DB::table('petugas')->get();
         $petugas = petugas::all();
 
+        $data = array(
+            'menu' => 'petugas',
+            'submenu' => ''
+        );
+
         // mengirim data petugas ke view master
-        return view('/petugas/petugas',['petugas' => $petugas]);
+        return view('/petugas/petugas',['petugas' => $petugas],$data);
         
     }
 

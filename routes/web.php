@@ -13,7 +13,11 @@ use illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $data = array(
+	    'menu' => 'Home',
+        'submenu' => ''
+	);        
+    return view('home',$data);
 })->name('beranda');
 
 //Anggota

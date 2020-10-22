@@ -13,9 +13,14 @@ class bukuController extends Controller
         // mengambil data dari table buku
         //$buku = DB::table('buku')->get();
         $buku = buku::all();
+
+        $data = array(
+            'menu' => 'buku',
+            'submenu' => ''
+        );
         
         // mengirim data buku ke view master
-        return view('/buku/buku',['buku' => $buku]);
+        return view('/buku/buku',['buku' => $buku],$data);
     }
 
     public function tambah()

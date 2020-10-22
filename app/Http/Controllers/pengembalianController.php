@@ -11,9 +11,14 @@ class pengembalianController extends Controller
     {
          // mengambil data dari table pengembalian
          $pengembalian = DB::table('pengembalian')->get();
+
+         $data = array(
+	        'menu' => 'transaksi',
+	        'submenu' => 'pengembalian'
+         );
  
          // mengirim data petugas ke view peminjaman
-         return view('/pengembalian/pengembalian',['pengembalian' => $pengembalian]);
+         return view('/pengembalian/pengembalian',['pengembalian' => $pengembalian],$data);
     
     }
 

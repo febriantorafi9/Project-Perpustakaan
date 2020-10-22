@@ -11,9 +11,14 @@ class peminjamanController extends Controller
     {
          // mengambil data dari table peminjaman
          $peminjaman = DB::table('peminjaman')->get();
+
+         $data = array(
+	        'menu' => 'transaksi',
+	        'submenu' => 'peminjaman'
+         );
  
          // mengirim data petugas ke view peminjaman
-         return view('/peminjaman/peminjaman',['peminjaman' => $peminjaman]);
+         return view('/peminjaman/peminjaman',['peminjaman' => $peminjaman],$data);
     
     }
 

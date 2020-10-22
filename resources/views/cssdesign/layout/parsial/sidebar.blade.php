@@ -28,7 +28,12 @@
                with font-awesome or any other icon font library -->
           
           <li class="nav-item">
-            <a href="{{route('beranda')}}" class="nav-link">
+          @if($menu == 'Home')
+            <a href="{{route('beranda')}}" class="nav-link active">
+  	        @else
+	            <a href="{{route('beranda')}}" class="nav-link">
+	            @endif
+            <!--<a href="{{route('beranda')}}" class="nav-link">-->
               <i class="fa fa-home"></i>
               <p>
                 Home
@@ -36,7 +41,11 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          @if($menu == 'transaksi')
+            <a href="#" class="nav-link active">
+  	        @else
+	            <a href="#" class="nav-link">
+	            @endif
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Transaksi
@@ -45,13 +54,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/peminjaman" class="nav-link">
+              @if($submenu == 'peminjaman')
+                <a href="/peminjaman" class="nav-link active">
+                @else
+	                <a href="/peminjaman" class="nav-link">
+	                @endif
                   <i class="fas fa-book-open"></i>
                   <p>Peminjaman</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/pengembalian" class="nav-link">
+              @if($submenu == 'pengembalian')
+                <a href="/pengembalian" class="nav-link active">
+                @else
+	                <a href="/pengembalian" class="nav-link">
+	                @endif
                   <i class="fas fa-book-open"></i>
                   <p>Pengembalian</p>
                 </a>
@@ -59,7 +76,11 @@
             </ul>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/petugas" class="nav-link">
+          @if($menu == 'petugas')
+            <a href="/petugas" class="nav-link active">
+  	        @else
+	            <a href="/petugas" class="nav-link">
+	            @endif
               <i class="nav-icon fas fa-user-tie"></i>
               <p>
                 Petugas
@@ -67,7 +88,11 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/anggota" class="nav-link">
+          @if($menu == 'anggota')
+          <a href="/anggota" class="nav-link active">
+  	        @else
+	            <a href="/anggota" class="nav-link">
+	            @endif
               <i class="nav-icon fas fa-user-circle"></i>
               <p>
                 Anggota
@@ -75,7 +100,11 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/buku" class="nav-link">
+          @if($menu == 'buku')
+            <a href="/buku" class="nav-link active">
+  	        @else
+	            <a href="/buku" class="nav-link">
+	            @endif
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Buku
@@ -83,7 +112,11 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/rak" class="nav-link">
+          @if($menu == 'rak')
+            <a href="/rak" class="nav-link active">
+  	        @else
+	            <a href="/rak" class="nav-link">
+	            @endif
               <i class="nav-icon far fa-folder"></i>
               <p>
                 Rak
