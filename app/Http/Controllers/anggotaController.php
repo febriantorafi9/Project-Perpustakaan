@@ -25,7 +25,11 @@ class anggotaController extends Controller
 
     public function tambah()
     {
-        return view('/anggota/tambah');
+        $data = array(
+            'menu' => 'anggota',
+            'submenu' => ''
+        );
+        return view('/anggota/tambah',$data);
     }
 
     public function simpan(Request $request)
@@ -44,7 +48,11 @@ class anggotaController extends Controller
     public function edit($id_anggota)
     {
         $anggota = DB::table('anggota')->where('id_anggota',$id_anggota)->get();
-        return view('/anggota/edit',['anggota' => $anggota]);
+        $data = array(
+            'menu' => 'anggota',
+            'submenu' => ''
+        );
+        return view('/anggota/edit',['anggota' => $anggota],$data);
     }
 
     public function update(Request $request)

@@ -26,9 +26,13 @@ class peminjamanController extends Controller
     {
         
         $buku = DB::table('buku')-> get();
+        $data = array(
+	        'menu' => 'transaksi',
+	        'submenu' => 'peminjaman'
+         );
         $petugas = DB::table('petugas')-> get();
         $anggota = DB::table('anggota')-> get();
-        return view('/peminjaman/tambah',['buku' => $buku, 'petugas' => $petugas, 'anggota' => $anggota]);
+        return view('/peminjaman/tambah',['buku' => $buku, 'petugas' => $petugas, 'anggota' => $anggota],$data);
 
     }
 
@@ -49,7 +53,11 @@ class peminjamanController extends Controller
     public function edit($id_peminjaman)
     {
         $peminjaman = DB::table('peminjaman')->where('id_peminjaman',$id_peminjaman)->get();
-        return view('/peminjaman/edit',['peminjaman' => $peminjaman]);
+        $data = array(
+	        'menu' => 'transaksi',
+	        'submenu' => 'peminjaman'
+         );
+        return view('/peminjaman/edit',['peminjaman' => $peminjaman],$data);
     }
 
     public function update(Request $request)

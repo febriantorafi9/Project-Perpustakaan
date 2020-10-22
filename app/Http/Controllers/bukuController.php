@@ -25,7 +25,11 @@ class bukuController extends Controller
 
     public function tambah()
     {
-        return view('/buku/tambah');
+        $data = array(
+            'menu' => 'buku',
+            'submenu' => ''
+        );
+        return view('/buku/tambah',$data);
     }
 
     public function simpan(Request $request)
@@ -44,7 +48,11 @@ class bukuController extends Controller
     public function edit($id_buku)
     {
         $buku = DB::table('buku')->where('id_buku',$id_buku)->get();
-        return view('/buku/edit',['buku' => $buku]);
+        $data = array(
+            'menu' => 'buku',
+            'submenu' => ''
+        );
+        return view('/buku/edit',['buku' => $buku],$data);
     }
 
     public function update(Request $request)
