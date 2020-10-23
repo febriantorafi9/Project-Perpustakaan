@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Rak;
 
 class rakController extends Controller
 {
     public function rak()
     {
-        $rak = DB::table('rak') -> get();
+        //$rak = DB::table('rak') -> get();
+        $rak = Rak::all();
 
         $data = array(
             'menu' => 'rak',

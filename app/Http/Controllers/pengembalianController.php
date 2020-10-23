@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Pengembalian;
 
 class pengembalianController extends Controller
 {
     public function pengembalian()
     {
          // mengambil data dari table pengembalian
-         $pengembalian = DB::table('pengembalian')->get();
+         //$pengembalian = DB::table('pengembalian')->get();
+         $pengembalian = Pengembalian::all();
 
          $data = array(
 	        'menu' => 'transaksi',

@@ -9,6 +9,6 @@ class Anggota extends Model
 {
     use SoftDeletes;
     protected $table = 'anggota';
-    protected $primarykey = 'id_anggota';
+    protected $primaryKey = 'id_anggota';
     public $timestamps = false;
 }

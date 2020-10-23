@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Peminjaman;
 
 class peminjamanController extends Controller
 {
     public function peminjaman()
     {
          // mengambil data dari table peminjaman
-         $peminjaman = DB::table('peminjaman')->get();
+         //$peminjaman = DB::table('peminjaman')->get();
+         $peminjaman = Peminjaman::all();
 
          $data = array(
 	        'menu' => 'transaksi',
