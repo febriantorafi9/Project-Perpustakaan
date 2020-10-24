@@ -11,9 +11,9 @@
 	<table class="table table-striped table-dark">
 		<tr>
             <th>ID Peminjaman</th>
-			<th>ID Buku</th>
-			<th>ID Petugas</th>
-			<th>ID Anggota</th>
+			<th>Judul Buku</th>
+			<th>Nama Petugas</th>
+			<th>Nama Anggota</th>
 			<th>Tgl Pinjam</th>
             <th>Tgl Kembali</th>
 			<th>Navigasi</th>
@@ -21,9 +21,9 @@
 		@foreach($peminjaman as $m)
 		<tr>
 			<td>{{ $m->id_peminjaman }}</td>
-			<td>{{ $m->id_buku }}</td>
-			<td>{{ $m->id_petugas }}</td>
-			<td>{{ $m->id_anggota }}</td>
+			<td>{{ $m->buku->judul_buku }}</td>
+			<td>{{ $m->petugas->nama_petugas }}</td>
+			<td>{{ $m->anggota->nama_anggota }}</td>
             <td>{{ $m->tgl_pinjam }}</td>
             <td>{{ $m->tgl_kembali }}</td>
 			<td>

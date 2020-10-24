@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Peminjaman;
+use App\Buku;
+use App\Petugas;
+use App\Anggota;
 
 class peminjamanController extends Controller
 {
@@ -13,6 +16,9 @@ class peminjamanController extends Controller
          // mengambil data dari table peminjaman
          //$peminjaman = DB::table('peminjaman')->get();
          $peminjaman = Peminjaman::all();
+         $buku = Buku::all();
+         $petugas = Petugas::all();
+         $anggota = Anggota::all();
 
          $data = array(
 	        'menu' => 'transaksi',
@@ -20,21 +26,21 @@ class peminjamanController extends Controller
          );
  
          // mengirim data petugas ke view peminjaman
-         return view('/peminjaman/peminjaman',['peminjaman' => $peminjaman],$data);
+         return view('/peminjaman/peminjaman',compact('buku','petugas','anggota','peminjaman'),$data);
     
     }
 
     public function tambah()
     {
         
-        $buku = DB::table('buku')-> get();
+        $buku = DB::table('buku')->pluck('judul_buku','id_buku');
         $data = array(
 	        'menu' => 'transaksi',
 	        'submenu' => 'peminjaman'
          );
-        $petugas = DB::table('petugas')-> get();
-        $anggota = DB::table('anggota')-> get();
-        return view('/peminjaman/tambah',['buku' => $buku, 'petugas' => $petugas, 'anggota' => $anggota],$data);
+        $petugas = DB::table('petugas')->pluck('nama_petugas','id_petugas');
+        $anggota = DB::table('anggota')->pluck('nama_anggota','id_anggota');
+        return view('/peminjaman/tambah',compact('buku','petugas','anggota'),$data);
 
     }
 
@@ -75,12 +81,15 @@ class peminjamanController extends Controller
         return redirect('/peminjaman');
     }
 
-    public function hapus(Request $request)
+    public function hapus($id)
     {
         //menghapus data peminjaman
         //DB::table('peminjaman')->where('id_peminjaman',$request->id_peminjaman)->delete();
 
-        Peminjaman::find($id)->delete();
+        $peminjaman = Peminjaman::find($id);
+    	$peminjaman->delete();
         return redirect('/peminjaman');
+
+        
     }
 }

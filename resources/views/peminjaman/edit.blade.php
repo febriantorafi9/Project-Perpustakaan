@@ -11,11 +11,11 @@
                 {{ csrf_field() }}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tgl Pinjam</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="tgl_pinjam" required="required" value="{{$m->tgl_pinjam}}">
+                        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="tgl_pinjam" required="required" value="{{$m->tgl_pinjam}}">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tgl Kembali</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="tgl_kembali" required="required" value="{{$m->tgl_kembali}}">
+                        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="tgl_kembali" required="required" value="{{$m->tgl_kembali}}">
                     </div>
                 <button type="submit" class="btn btn-primary">Update</button>
                 </form>

@@ -11,4 +11,8 @@ class Buku extends Model
     protected $table = 'buku';
     protected $primaryKey = 'id_buku';
     public $timestamps = false;
+    public function peminjamanBuku(){
+        return $this->hasMany(Peminjaman::class,'id_buku');
+    }
+
 }

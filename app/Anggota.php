@@ -11,4 +11,8 @@ class Anggota extends Model
     protected $table = 'anggota';
     protected $primaryKey = 'id_anggota';
     public $timestamps = false;
+    public function peminjamanAnggota(){
+        return $this->hasMany(Peminjaman::class,'id_anggota');
+    }
+
 }
