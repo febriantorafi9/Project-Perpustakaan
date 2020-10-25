@@ -11,6 +11,7 @@ class Peminjaman extends Model
     protected $table = 'peminjaman';
     protected $primaryKey = 'id_peminjaman';
     protected $fillable = ['id_buku','id_petugas','id_anggota','tgl_pinjam','tgl_kembali'];
+    public $timestamps = false;
     protected $date = ['deleted_at'];
     
     public function buku(){

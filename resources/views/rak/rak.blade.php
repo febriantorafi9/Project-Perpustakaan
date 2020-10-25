@@ -13,7 +13,7 @@
             <td>ID Rak</td>
             <td>Nama Rak</td>
             <td>Lokasi Rak</td>
-            <td>ID Buku</td>
+            <td>Nama Buku</td>
             <th>Navigasi</th>
         </tr>
         @foreach($rak as $r)
@@ -21,7 +21,7 @@
             <td>{{ $r -> id_rak }}</td>
             <td>{{ $r -> nama_rak }}</td>
             <td>{{ $r -> lokasi_rak }}</td>
-            <td>{{ $r -> id_buku }}</td>
+            <td>{{ $r -> buku -> judul_buku }}</td>
             <td>
                 <a href="/rak/edit/{{ $r -> id_rak }}" class="btn btn-info">Edit</a>
                 |

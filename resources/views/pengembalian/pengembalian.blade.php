@@ -11,18 +11,18 @@
     <table class="table table-striped table-dark">
         <tr>
             <th>ID Pengembalian</th>
-            <th>ID Buku</th>
-            <th>ID Petugas</th>
-            <th>ID Anggota</th>
+            <th>Judul Buku</th>
+            <th>Nama Petugas</th>
+            <th>Nama Anggota</th>
             <th>Tgl Kembali</th>
             <th>Navigasi</th>
         </tr>
         @foreach($pengembalian as $pe)
         <tr>
             <td>{{ $pe->id_pengembalian }}</td>
-            <td>{{ $pe->id_buku }}</td>
-            <td>{{ $pe->id_petugas }}</td>
-            <td>{{ $pe->id_anggota }}</td>
+            <td>{{ $pe->buku->judul_buku }}</td>
+            <td>{{ $pe->petugas->nama_petugas }}</td>
+            <td>{{ $pe->anggota->nama_anggota }}</td>
             <td>{{ $pe->tgl_kembali }}</td>
             <td>
                 <a href="/pengembalian/edit/{{ $pe->id_pengembalian }}" class="btn btn-info">Edit</a>

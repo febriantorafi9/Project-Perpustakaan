@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Rak;
+use App\Buku;
 
 class rakController extends Controller
 {
@@ -12,23 +13,24 @@ class rakController extends Controller
     {
         //$rak = DB::table('rak') -> get();
         $rak = Rak::all();
+        $buku = Buku::all();
 
         $data = array(
             'menu' => 'rak',
             'submenu' => ''
         );
 
-        return view('/rak/rak',['rak' => $rak],$data);
+        return view('/rak/rak',compact('buku','rak'),$data);
     }
 
     public function tambah()
     {
-        $buku = DB::table('buku')-> get();
+        $buku = DB::table('buku')-> pluck('judul_buku','id_buku');
         $data = array(
             'menu' => 'rak',
             'submenu' => ''
         );
-        return view('/rak/tambah',['buku' => $buku],$data);
+        return view('/rak/tambah',compact('buku'),$data);
     }
         
 
@@ -65,7 +67,7 @@ class rakController extends Controller
         return redirect('/rak');
     }
     
-    public function hapus(Request $request)
+    public function hapus($id)
     {
         //menghapus data rak
         //DB::table('rak')->where('id_rak',$request->id_rak)->delete();

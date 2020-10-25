@@ -11,8 +11,13 @@ class Petugas extends Model
     protected $table = 'petugas';
     protected $primaryKey = 'id_petugas';
     public $timestamps = false;
+
     public function peminjamanPetugas(){
         return $this->hasMany(Peminjaman::class,'id_petugas');
+    }
+
+    public function pengembalianPetugas(){
+        return $this->hasMany(Pengembalian::class,'id_petugas');
     }
 
 }

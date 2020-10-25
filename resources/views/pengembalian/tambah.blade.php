@@ -9,20 +9,20 @@
         <form action="/pengembalian/simpan" method="get">
         {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID Buku</label>
-                    <select name="id_buku" required="required">@foreach ($buku as $b)<option value="{{ $b -> id_buku }}">{{$b -> judul_buku}}</option>@endforeach</select>
+                    <label for="exampleInputEmail1">Nama Buku</label>
+                    <select name="id_buku" required="required">@foreach ($buku as $b => $value)<option value="{{ $b }}">{{$value}}</option>@endforeach</select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID Petugas</label>
-                    <select name="id_petugas" required="required">@foreach ($petugas as $p)<option value="{{ $p -> id_petugas }}">{{$p -> nama_petugas}}</option>@endforeach</select>
+                    <label for="exampleInputEmail1">Nama Petugas</label>
+                    <select name="id_petugas" required="required">@foreach ($petugas as $p => $value)<option value="{{ $p }}">{{$value}}</option>@endforeach</select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID Anggota</label>
-                    <select name="id_anggota" required="required">@foreach ($anggota as $a)<option value="{{ $a -> id_anggota }}">{{$a -> nama_anggota}}</option>@endforeach</select>
+                    <label for="exampleInputEmail1">Nama Anggota</label>
+                    <select name="id_anggota" required="required">@foreach ($anggota as $a => $value)<option value="{{ $a }}">{{$value}}</option>@endforeach</select>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Tgl Kembali</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="tgl_kembali" required="required">
+                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="tgl_kembali" required="required">
                 </div>
               <button type="submit" class="btn btn-primary">Simpan</button>
         </form>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Pengembalian;
+use App\Buku;
+use App\Petugas;
+use App\Anggota;
 
 class pengembalianController extends Controller
 {
@@ -13,6 +16,9 @@ class pengembalianController extends Controller
          // mengambil data dari table pengembalian
          //$pengembalian = DB::table('pengembalian')->get();
          $pengembalian = Pengembalian::all();
+         $buku = Buku::all();
+         $petugas = Petugas::all();
+         $anggota = Anggota::all();
 
          $data = array(
 	        'menu' => 'transaksi',
@@ -20,21 +26,21 @@ class pengembalianController extends Controller
          );
  
          // mengirim data petugas ke view peminjaman
-         return view('/pengembalian/pengembalian',['pengembalian' => $pengembalian],$data);
+         return view('/pengembalian/pengembalian',compact('buku','petugas','anggota','pengembalian'),$data);
     
     }
 
     public function tambah()
     {
         
-        $buku = DB::table('buku')-> get();
+        $buku = DB::table('buku')->pluck('judul_buku','id_buku');
         $data = array(
 	        'menu' => 'transaksi',
 	        'submenu' => 'pengembalian'
          );
-        $petugas = DB::table('petugas')-> get();
-        $anggota = DB::table('anggota')-> get();
-        return view('/pengembalian/tambah',['buku' => $buku, 'petugas' => $petugas, 'anggota' => $anggota],$data);
+         $petugas = DB::table('petugas')->pluck('nama_petugas','id_petugas');
+         $anggota = DB::table('anggota')->pluck('nama_anggota','id_anggota');
+        return view('/pengembalian/tambah',compact('buku','petugas','anggota'),$data);
 
     }
 
@@ -73,12 +79,14 @@ class pengembalianController extends Controller
         return redirect('/pengembalian');
     }
 
-    public function hapus(Request $request)
+    public function hapus($id)
     {
         //menghapus data pengembalian
         //DB::table('pengembalian')->where('id_pengembalian',$request->id_pengembalian)->delete();
         
-        Pengembalian::find($id)->delete();
+        
+        $pengembalian = Pengembalian::find($id);
+        $pengembalian -> delete();
         return redirect('/pengembalian');
     }
 }
