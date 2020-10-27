@@ -61,11 +61,14 @@ class peminjamanController extends Controller
     public function edit($id_peminjaman)
     {
         $peminjaman = DB::table('peminjaman')->where('id_peminjaman',$id_peminjaman)->get();
+        $buku = DB::table('buku')->pluck('judul_buku','id_buku');
+        $petugas = DB::table('petugas')->pluck('nama_petugas','id_petugas');
+        $anggota = DB::table('anggota')->pluck('nama_anggota','id_anggota');
         $data = array(
 	        'menu' => 'transaksi',
 	        'submenu' => 'peminjaman'
          );
-        return view('/peminjaman/edit',['peminjaman' => $peminjaman],$data);
+        return view('/peminjaman/edit',compact('peminjaman','buku','petugas','anggota'),$data);
     }
 
     public function update(Request $request)

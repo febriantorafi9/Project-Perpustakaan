@@ -60,11 +60,14 @@ class pengembalianController extends Controller
     public function edit($id_pengembalian)
     {
         $pengembalian = DB::table('pengembalian')->where('id_pengembalian',$id_pengembalian)->get();
+        $buku = DB::table('buku')->pluck('judul_buku','id_buku');
+        $petugas = DB::table('petugas')->pluck('nama_petugas','id_petugas');
+        $anggota = DB::table('anggota')->pluck('nama_anggota','id_anggota');
         $data = array(
 	        'menu' => 'transaksi',
 	        'submenu' => 'pengembalian'
          );
-        return view('/pengembalian/edit',['pengembalian' => $pengembalian],$data);
+        return view('/pengembalian/edit',compact('pengembalian','buku','petugas','anggota'),$data);
     }
 
     public function update(Request $request)

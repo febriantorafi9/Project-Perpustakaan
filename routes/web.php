@@ -13,6 +13,18 @@ use illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('login');
+})->name('login');
+
+Route::post('/home', function () {
+    $data = array(
+	    'menu' => 'Home',
+        'submenu' => ''
+	);        
+    return view('home',$data);
+})->name('beranda');
+
+Route::get('/home', function () {
     $data = array(
 	    'menu' => 'Home',
         'submenu' => ''

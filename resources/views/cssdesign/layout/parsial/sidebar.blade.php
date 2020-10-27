@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="img/n.png"
+      <img src="img/book.png"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
@@ -46,7 +46,7 @@
   	        @else
 	            <a href="#" class="nav-link">
 	            @endif
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="fas fa-bookmark"></i>
               <p>
                 Transaksi
                 <i class="fas fa-angle-left right"></i>
