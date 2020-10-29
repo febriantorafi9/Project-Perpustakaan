@@ -124,7 +124,7 @@
             </ul>
           </li>
           <li class="nav-item has-treeview">
-          @if($menu == 'History')
+          @if($menu == 'history')
             <a href="#" class="nav-link active">
   	        @else
 	            <a href="#" class="nav-link">
@@ -137,10 +137,10 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              @if($submenu == 'history')
-                <a href="/history" class="nav-link active">
+              @if($submenu == 'historypeminjaman')
+                <a href="/historypeminjaman" class="nav-link active">
                 @else
-	                <a href="/history" class="nav-link">
+	                <a href="/historypeminjaman" class="nav-link">
 	                @endif
                   <i class='fas fa-file-alt'></i>
                   <p>History Peminjaman</p>

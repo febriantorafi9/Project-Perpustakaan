@@ -1,10 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+use App\Peminjaman;
+use App\Buku;
+use App\Petugas;
+use App\Anggota;
 
-use Illuminate\Http\Request;
+class historypeminjamanController extends Controller{
+    public function index()
+    {
+         $peminjaman = Peminjaman::all();
+         $buku = Buku::all();
+         $petugas = Petugas::all();
+         $anggota = Anggota::all();
 
-class historypeminjamanController extends Controller
-{
-    //
+         $data = array(
+	        'menu' => 'history',
+	        'submenu' => 'historypeminjaman'
+         );
+ 
+         // mengirim data petugas ke view peminjaman
+         return view('/history/historypeminjaman',compact('buku','petugas','anggota','peminjaman'),$data);
+    }
+
+
 }
