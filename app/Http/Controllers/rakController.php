@@ -60,13 +60,11 @@ class rakController extends Controller
         return view('/rak/edit',['rak' => $rak],$data);
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        DB::table('rak')->where('id_rak',$request->id_rak) -> update([
-            'id_rak' => $request ->id_rak,
+        DB::table('rak')->where('id_rak',$id) -> update([
             'nama_rak' => $request ->nama_rak,
-            'lokasi_rak' => $request ->lokasi_rak,
-            'id_buku' => $request ->id_buku
+            'lokasi_rak' => $request ->lokasi_rak
         ]);
         return redirect('/rak');
     }

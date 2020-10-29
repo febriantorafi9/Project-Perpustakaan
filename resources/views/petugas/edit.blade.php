@@ -7,7 +7,7 @@
             <br/>
             <br/>
             @foreach($petugas as $p)
-            <form action="/petugas/update" method="get">
+            <form action="/petugas/update/{{$p->id_petugas}}" method="get">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nama</label>
@@ -15,7 +15,7 @@
                 </div>
                 <div class="form-group">
                         <label for="jenis_kelamin_petugas">Jenis Kelamin (Laki-laki atau Perempuan)</label>
-                        <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
+                        <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" required="required" value="{{$p->jenis_kelamin}}">
                         <option>L</option>
                         <option>P</option>
       

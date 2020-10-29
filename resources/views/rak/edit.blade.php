@@ -7,7 +7,7 @@
             <br/>
             <br/>
             @foreach($rak as $k)
-                <form action="/rak/update" method="get">
+                <form action="/rak/update/{{$k->id_rak}}" method="get">
                 {{ csrf_field() }}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Rak</label>

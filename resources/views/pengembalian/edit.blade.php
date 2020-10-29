@@ -7,7 +7,7 @@
             <br/>
             <br/>
             @foreach($pengembalian as $pe)
-                <form action="/pengembalian/update" method="get">
+                <form action="/pengembalian/update/{{$pe->id_pengembalian}}" method="get">
                 {{ csrf_field() }}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Nama Buku</label>

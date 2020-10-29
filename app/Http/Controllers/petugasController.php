@@ -61,9 +61,9 @@ class petugasController extends Controller
         return view('/petugas/edit',['petugas' => $petugas],$data);
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        DB::table('petugas')->where('id_petugas',$request->id_petugas)->update([
+        DB::table('petugas')->where('id_petugas',$id)->update([
             'nama_petugas' => $request->nama_petugas,
             'jenis_kelamin' => $request->jenis_kelamin,
             'jabatan' => $request->jabatan,

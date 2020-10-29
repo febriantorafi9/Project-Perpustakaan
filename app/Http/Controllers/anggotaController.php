@@ -59,9 +59,9 @@ class anggotaController extends Controller
         return view('/anggota/edit',['anggota' => $anggota],$data);
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        DB::table('anggota')->where('id_anggota',$request->id_anggota)->update([
+        DB::table('anggota')->where('id_anggota',$id)->update([
             'nama_anggota' => $request->nama_anggota,
             'jenis_kelamin' => $request->jenis_kelamin,
             'no_telp_anggota' => $request->no_telp_anggota,

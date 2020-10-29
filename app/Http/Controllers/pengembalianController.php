@@ -70,9 +70,9 @@ class pengembalianController extends Controller
         return view('/pengembalian/edit',compact('pengembalian','buku','petugas','anggota'),$data);
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        DB::table('pengembalian')->where('id_pengembalian',$request->id_pengembalian)->update([
+        DB::table('pengembalian')->where('id_pengembalian',$id)->update([
             'id_pengembalian' => $request->id_pengembalian,
             'id_buku'=>$request->id_buku,
             'id_petugas'=>$request->id_petugas,

@@ -59,10 +59,9 @@ class bukuController extends Controller
         return view('/buku/edit',['buku' => $buku],$data);
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        DB::table('buku')->where('id_buku',$request->id_buku) -> update([
-            'id_buku' => $request ->id_buku,
+        DB::table('buku')->where('id_buku',$id) -> update([
             'judul_buku' => $request ->judul_buku,
             'penerbit' => $request ->penerbit,
             'tahun_terbit' => $request ->tahun_terbit,

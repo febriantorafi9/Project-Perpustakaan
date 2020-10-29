@@ -7,7 +7,7 @@
             <br/>
             <br/>
             @foreach($buku as $r)
-            <form action="/buku/update" method="get">
+            <form action="/buku/update/{{$r->id_buku}}" method="get">
                 {{ csrf_field() }}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Judul Buku</label>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Stok</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Stok" required="required" value="{{$r->stok}}">
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="stok" required="required" value="{{$r->stok}}">
                     </div>
                 <button type="submit" class="btn btn-primary">Update</button>
                 </form>
