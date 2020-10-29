@@ -1,7 +1,7 @@
 @extends('/komponen/master2')
 
 @section('konten')
-<h2><p class="text-dark">Edit Data Petugas</p></h2>
+<h2><p class="text-dark">Tambah Data Petugas</p></h2>
             <br/>
                 <a href="/petugas" class="btn btn-warning">kembali</a>
             <br/>
