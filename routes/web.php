@@ -81,3 +81,6 @@ route::get('peminjaman/simpan','peminjamanController@simpan');
 route::get('peminjaman/edit/{id_peminjaman}','peminjamanController@edit');
 route::get('peminjaman/update','peminjamanController@update');
 route::get('peminjaman/hapus/{id_peminjaman}','peminjamanController@hapus');
+
+//History
+route::get('historypeminjaman','historypeminjamanController@index');
