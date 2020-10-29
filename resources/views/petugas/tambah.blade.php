@@ -13,7 +13,7 @@
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nama_petugas" required="required">
                 </div>
                 <div class="form-group">
-                        <label for="jenis_kelamin_Petugas">Jenis Kelamin (Laki-laki atau Perempuan)</label>
+                        <label for="jenis_kelamin">Jenis Kelamin (Laki-laki atau Perempuan)</label>
                         <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
                         <option>L</option>
                         <option>P</option>
