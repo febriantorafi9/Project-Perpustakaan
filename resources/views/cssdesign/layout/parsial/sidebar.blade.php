@@ -147,10 +147,10 @@
                 </a>
               </li>
               <li class="nav-item">
-              @if($submenu == 'koleksi')
-                <a href="/koleksi" class="nav-link active">
+              @if($submenu == 'koleksibuku')
+                <a href="/koleksibuku" class="nav-link active">
                 @else
-	                <a href="/koleksi" class="nav-link">
+	                <a href="/koleksibuku" class="nav-link">
 	                @endif
                   <i class='fas fa-book'></i>
                   <p>Koleksi Buku</p>

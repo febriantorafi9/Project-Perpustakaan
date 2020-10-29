@@ -84,3 +84,6 @@ route::get('peminjaman/hapus/{id_peminjaman}','peminjamanController@hapus');
 
 //History
 route::get('historypeminjaman','historypeminjamanController@index');
+
+//Koleksi
+route::get('koleksibuku','koleksibukuController@index');

@@ -8,11 +8,15 @@ use App\Anggota;
 
 class anggotaController extends Controller
 {
-    public function anggota()
+    public function anggota(Request $request)
     {
         // mengambil data dari table anggota
         //$anggota = DB::table('anggota')->get();
-        $anggota = anggota::all();
+        if($request -> has('cari')){
+            $anggota = Anggota::where('nama_anggota','LIKE','%'.$request->cari.'%')->get();
+        }else{
+            $anggota = Anggota::all();
+        }
 
         $data = array(
             'menu' => 'anggota',

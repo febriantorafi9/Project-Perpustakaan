@@ -9,10 +9,14 @@ use App\Buku;
 
 class rakController extends Controller
 {
-    public function rak()
+    public function rak(Request $request)
     {
         //$rak = DB::table('rak') -> get();
-        $rak = Rak::all();
+        if($request -> has('cari')){
+            $rak = Rak::where('nama_rak','LIKE','%'.$request->cari.'%')->get();
+        }else{
+            $rak = Rak::all();
+        }
         $buku = Buku::all();
 
         $data = array(

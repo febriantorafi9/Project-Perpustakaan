@@ -4,10 +4,15 @@
 <h3>Data Petugas</h3>
  
 	<a href="/petugas/tambah" class="btn btn-success">+ Tambah Petugas Baru</a>
-	
 	<br/>
 	<br/>
- 
+	<div class="search-container">
+        <form method="GET" action="/petugas">
+            <input type="text" name ="cari" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+	<br/>
 	<table class="table table-striped table-dark">
 		<tr>
             <th>ID</th>

@@ -8,11 +8,15 @@ use App\Buku;
 
 class bukuController extends Controller
 {
-    public function buku()
+    public function buku(Request $request)
     {
         // mengambil data dari table buku
         //$buku = DB::table('buku')->get();
-        $buku = buku::all();
+        if($request -> has('cari')){
+            $buku = Buku::where('judul_buku','LIKE','%'.$request->cari.'%')->get();
+        }else{
+            $buku = Buku::all();
+        }
 
         $data = array(
             'menu' => 'buku',

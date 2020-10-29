@@ -3,6 +3,12 @@
 @section("konten")
 <h3>Data Peminjaman</h3>
 	
+	<div class="search-container">
+        <form method="GET" action="/historypeminjaman">
+            <input type="text" name ="cari" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
 	<br/>
 	<br/>
  

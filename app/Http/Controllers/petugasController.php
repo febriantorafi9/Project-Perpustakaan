@@ -8,11 +8,15 @@ use App\Petugas;
 
 class petugasController extends Controller
 {
-    public function petugas(){
+    public function petugas(Request $request){
         
         // mengambil data dari table petugas
         //$petugas = DB::table('petugas')->get();
-        $petugas = petugas::all();
+        if($request -> has('cari')){
+            $petugas = Petugas::where('nama_petugas','LIKE','%'.$request->cari.'%')->get();
+        }else{
+            $petugas = Petugas::all();
+        }
 
         $data = array(
             'menu' => 'petugas',

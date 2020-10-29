@@ -4,10 +4,15 @@
 <h3>Data Anggota</h3>
  
 	<a href="/anggota/tambah" class="btn btn-success">+ Tambah Anggota Baru</a>
-	
 	<br/>
 	<br/>
- 
+	<div class="search-container">
+        <form method="GET" action="/anggota">
+            <input type="text" name ="cari" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+	<br/>
 	<table class="table table-striped table-dark">
 		<tr>
             <th>ID</th>

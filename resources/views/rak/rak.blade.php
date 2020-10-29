@@ -4,10 +4,15 @@
 <h3>Data Rak</h3>
 
     <a href="/rak/tambah" class="btn btn-success">+ Tambah Rak Baru</a>
-
     <br/>
     <br/>
-
+    <div class="search-container">
+        <form method="GET" action="/rak">
+            <input type="text" name ="cari" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+	<br/>
     <table class="table table-striped table-dark">
         <tr>
             <td>ID Rak</td>
