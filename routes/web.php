@@ -56,6 +56,7 @@ route::get('buku/simpan','bukuController@simpan');
 route::get('buku/edit/{id_buku}','bukuController@edit');
 route::get('buku/update','bukuController@update');
 route::get('buku/hapus/{id_buku}','bukuController@hapus');
+route::get('buku/cari','bukuController@cari');
 
 //Rak
 route::get('rak','rakController@rak');

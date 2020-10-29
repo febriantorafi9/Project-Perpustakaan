@@ -123,7 +123,30 @@
               </p>
             </a>
           </li>
-          
+          <li class="nav-item has-treeview">
+          @if($menu == 'history')
+            <a href="/history" class="nav-link active">
+  	        @else
+	            <a href="/history" class="nav-link">
+	            @endif
+              <i class='nav-icon fas fa-book-reader'></i>
+              <p>
+                History Peminjaman
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+          @if($menu == 'koleksi')
+            <a href="/koleksi" class="nav-link active">
+  	        @else
+	            <a href="/koleksi" class="nav-link">
+	            @endif
+              <i class="nav-icon fas fa-book-open"></i>
+              <p>
+                Koleksi Buku
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
