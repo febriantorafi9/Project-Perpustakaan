@@ -39,42 +39,6 @@
                 Home
               </p>
             </a>
-          </li>
-          <li class="nav-item has-treeview">
-          @if($menu == 'transaksi')
-            <a href="#" class="nav-link active">
-  	        @else
-	            <a href="#" class="nav-link">
-	            @endif
-              <i class="fas fa-bookmark"></i>
-              <p>
-                Transaksi
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-              @if($submenu == 'peminjaman')
-                <a href="/peminjaman" class="nav-link active">
-                @else
-	                <a href="/peminjaman" class="nav-link">
-	                @endif
-                  <i class="fas fa-book-open"></i>
-                  <p>Peminjaman</p>
-                </a>
-              </li>
-              <li class="nav-item">
-              @if($submenu == 'pengembalian')
-                <a href="/pengembalian" class="nav-link active">
-                @else
-	                <a href="/pengembalian" class="nav-link">
-	                @endif
-                  <i class="fas fa-book-open"></i>
-                  <p>Pengembalian</p>
-                </a>
-              </li>
-            </ul>
-          </li>
           <li class="nav-item has-treeview">
           @if($menu == 'petugas')
             <a href="/petugas" class="nav-link active">
@@ -123,29 +87,76 @@
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
-          @if($menu == 'history')
-            <a href="/history" class="nav-link active">
-  	        @else
-	            <a href="/history" class="nav-link">
-	            @endif
-              <i class='nav-icon fas fa-book-reader'></i>
-              <p>
-                History Peminjaman
-              </p>
-            </a>
           </li>
           <li class="nav-item has-treeview">
-          @if($menu == 'koleksi')
-            <a href="/koleksi" class="nav-link active">
+          @if($menu == 'transaksi')
+            <a href="#" class="nav-link active">
   	        @else
-	            <a href="/koleksi" class="nav-link">
+	            <a href="#" class="nav-link">
 	            @endif
-              <i class="nav-icon fas fa-book-open"></i>
+              <i class="fas fa-bookmark"></i>
               <p>
-                Koleksi Buku
+                Transaksi
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              @if($submenu == 'peminjaman')
+                <a href="/peminjaman" class="nav-link active">
+                @else
+	                <a href="/peminjaman" class="nav-link">
+	                @endif
+                  <i class="fas fa-book-open"></i>
+                  <p>Peminjaman</p>
+                </a>
+              </li>
+              <li class="nav-item">
+              @if($submenu == 'pengembalian')
+                <a href="/pengembalian" class="nav-link active">
+                @else
+	                <a href="/pengembalian" class="nav-link">
+	                @endif
+                  <i class="fas fa-book-open"></i>
+                  <p>Pengembalian</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+          @if($menu == 'History')
+            <a href="#" class="nav-link active">
+  	        @else
+	            <a href="#" class="nav-link">
+	            @endif
+              <i class='far fa-folder'></i>
+              <p>
+                History
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              @if($submenu == 'history')
+                <a href="/history" class="nav-link active">
+                @else
+	                <a href="/history" class="nav-link">
+	                @endif
+                  <i class='fas fa-file-alt'></i>
+                  <p>History Peminjaman</p>
+                </a>
+              </li>
+              <li class="nav-item">
+              @if($submenu == 'koleksi')
+                <a href="/koleksi" class="nav-link active">
+                @else
+	                <a href="/koleksi" class="nav-link">
+	                @endif
+                  <i class='fas fa-book'></i>
+                  <p>Koleksi Buku</p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
