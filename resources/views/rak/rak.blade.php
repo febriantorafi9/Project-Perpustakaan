@@ -21,18 +21,24 @@
             <td>Nama Buku</td>
             <th>Navigasi</th>
         </tr>
-        @foreach($rak as $r)
+        @foreach($buku as $b)
+        @foreach( $b-> rak as $r ) 
         <tr>
-            <td>{{ $r -> id_rak }}</td>
+            <td>{{ $r-> id_rak }}</td>
             <td>{{ $r -> nama_rak }}</td>
             <td>{{ $r -> lokasi_rak }}</td>
-            <td>{{ $r -> buku -> judul_buku }}</td>
+            <td>
+            
+            {{ $b->judul_buku }}
+            
+            </td>
             <td>
                 <a href="/rak/edit/{{ $r -> id_rak }}" class="btn btn-info">Edit</a>
                 |
                 <a href="/rak/hapus/{{ $r -> id_rak }}" class="btn btn-info">Hapus</a>
             </td>
         </tr>
+        @endforeach
         @endforeach
     </table>
 @endsection

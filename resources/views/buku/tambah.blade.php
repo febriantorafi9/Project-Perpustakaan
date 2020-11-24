@@ -9,6 +9,14 @@
         <form action="/buku/simpan" method="get">
         {{ csrf_field() }}
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Nama Rak</label>
+                    <select class="form-control" id="rak_id_rak" name="rak_id_rak">
+                            @foreach ( $rak as $r )    
+                                <option value="{{ $r->id_rak }}">{{ $r->nama_rak }}</option>
+                            @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="exampleInputEmail1">Judul Buku</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="judul_buku" required="required">
                 </div>

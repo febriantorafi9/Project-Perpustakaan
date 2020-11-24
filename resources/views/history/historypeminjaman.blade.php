@@ -1,15 +1,16 @@
 @extends('/komponen/master2')
 
 @section("konten")
-<h3>Data Peminjaman</h3>
+<h3>Data History Peminjaman</h3>
+
 	
+	<br/>
 	<div class="search-container">
         <form method="GET" action="/historypeminjaman">
             <input type="text" name ="cari" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
-	<br/>
 	<br/>
  
 	<table class="table table-striped table-dark">

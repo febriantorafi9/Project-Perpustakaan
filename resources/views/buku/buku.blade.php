@@ -6,13 +6,6 @@
     <a href="/buku/tambah" class="btn btn-success"> + Tambah Buku Baru</a>
     <br/>
 	<br/>
-    <div class="search-container">
-        <form method="GET" action="/buku">
-            <input type="text" name ="cari" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-	<br/>
     <table class="table table-striped table-dark">
         <tr>
             <th>ID Buku</th>

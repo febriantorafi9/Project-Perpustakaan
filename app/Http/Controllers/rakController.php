@@ -12,11 +12,7 @@ class rakController extends Controller
     public function rak(Request $request)
     {
         //$rak = DB::table('rak') -> get();
-        if($request -> has('cari')){
-            $rak = Rak::where('nama_rak','LIKE','%'.$request->cari.'%')->get();
-        }else{
-            $rak = Rak::all();
-        }
+        $rak = Rak::all();
         $buku = Buku::all();
 
         $data = array(
@@ -24,7 +20,7 @@ class rakController extends Controller
             'submenu' => ''
         );
 
-        return view('/rak/rak',compact('buku','rak'),$data);
+        return view('/rak/rak',compact('rak','buku'),$data);
     }
 
     public function tambah()
@@ -51,7 +47,7 @@ class rakController extends Controller
     }
 
     public function edit($id_rak)
-    {
+    {   
         $rak = DB::table('rak')->where('id_rak',$id_rak)->get();
         $data = array(
             'menu' => 'rak',

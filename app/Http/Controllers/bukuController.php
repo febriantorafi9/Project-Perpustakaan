@@ -5,18 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Buku;
+use App\Rak;
 
 class bukuController extends Controller
 {
-    public function buku(Request $request)
+    public function buku()
     {
         // mengambil data dari table buku
         //$buku = DB::table('buku')->get();
-        if($request -> has('cari')){
-            $buku = Buku::where('judul_buku','LIKE','%'.$request->cari.'%')->get();
-        }else{
-            $buku = Buku::all();
-        }
+        $buku = Buku::all();
+        $rak = Rak::all();
 
         $data = array(
             'menu' => 'buku',
@@ -24,16 +22,20 @@ class bukuController extends Controller
         );
         
         // mengirim data buku ke view master
-        return view('/buku/buku',['buku' => $buku],$data);
+        return view('/buku/buku',compact('rak','buku'),$data);
     }
 
     public function tambah()
     {
+        $buku = Buku::all();
+        $rak = Rak::all();
+        
         $data = array(
             'menu' => 'buku',
             'submenu' => ''
         );
-        return view('/buku/tambah',$data);
+        //return view('/buku/tambah',$data);
+        return view('/buku/tambah',compact('buku','rak'),$data);
     }
 
     public function simpan(Request $request)
@@ -51,12 +53,14 @@ class bukuController extends Controller
 
     public function edit($id_buku)
     {
+        $rak = Rak::all();
         $buku = DB::table('buku')->where('id_buku',$id_buku)->get();
         $data = array(
             'menu' => 'buku',
             'submenu' => ''
         );
-        return view('/buku/edit',['buku' => $buku],$data);
+        //return view('/buku/edit',['buku' => $buku],$data);
+        return view('/buku/edit',compact('buku','rak'),$data);
     }
 
     public function update(Request $request,$id)
