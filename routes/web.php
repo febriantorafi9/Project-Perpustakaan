@@ -21,7 +21,7 @@ Route::post('/home', function () {
 	    'menu' => 'Home',
         'submenu' => ''
 	);        
-    return view('home',$data);
+    return view('home1',$data);
 })->name('beranda');
 
 Route::get('/home', function () {
@@ -29,7 +29,7 @@ Route::get('/home', function () {
 	    'menu' => 'Home',
         'submenu' => ''
 	);        
-    return view('home',$data);
+    return view('home1',$data);
 })->name('beranda');
 
 //Anggota
@@ -87,3 +87,6 @@ route::get('historypeminjaman','historypeminjamanController@index');
 
 //Koleksi
 route::get('koleksibuku','koleksibukuController@index');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
