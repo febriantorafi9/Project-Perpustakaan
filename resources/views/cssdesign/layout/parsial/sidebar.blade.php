@@ -28,7 +28,7 @@
                with font-awesome or any other icon font library -->
           
           <li class="nav-item">
-          @if($menu == 'Home')
+          @if($menu == 'Home1')
             <a href="{{route('beranda')}}" class="nav-link active">
   	        @else
 	            <a href="{{route('beranda')}}" class="nav-link">

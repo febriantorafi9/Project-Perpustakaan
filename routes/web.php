@@ -12,21 +12,32 @@ use illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('login');
 })->name('login');
+*/
 
-Route::post('/home', function () {
+Route::get('/',function (){
+    return view('welcome');
+});
+
+Route::get('/home',function (){
+    return view('home');
+});
+
+Route::get('login', 'HomeController@index');
+
+Route::post('/home1', function () {
     $data = array(
-	    'menu' => 'Home',
+	    'menu' => 'Home1',
         'submenu' => ''
 	);        
     return view('home1',$data);
 })->name('beranda');
 
-Route::get('/home', function () {
+Route::get('/home1', function () {
     $data = array(
-	    'menu' => 'Home',
+	    'menu' => 'Home1',
         'submenu' => ''
 	);        
     return view('home1',$data);
