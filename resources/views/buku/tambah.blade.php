@@ -10,11 +10,7 @@
         {{ csrf_field() }}
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nama Rak</label>
-                    <select class="form-control" id="rak_id_rak" name="rak_id_rak">
-                            @foreach ( $rak as $r )    
-                                <option value="{{ $r->id_rak }}">{{ $r->nama_rak }}</option>
-                            @endforeach
-                    </select>
+                    <select name="id_rak" required="required">@foreach ($rak as $r => $value)<option value="{{ $r }}">{{$value}}</option>@endforeach</select>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Judul Buku</label>

@@ -10,11 +10,11 @@ class Rak extends Model
     use SoftDeletes;
     protected $table = 'rak';
     protected $primaryKey = 'id_rak';
-    protected $fillable = ['nama_rak','lokasi_rak','id_buku'];
+    protected $fillable = ['nama_rak','lokasi_rak'];
     public $timestamps = false;
     protected $date = ['deleted_at'];
 
     public function buku(){
-        return $this->belongsTo(Buku::class,'id_buku');
+        return $this->hasMany(Buku::class,'id_rak');
     }
 }

@@ -9,6 +9,7 @@
     <table class="table table-striped table-dark">
         <tr>
             <th>ID Buku</th>
+            <th>Nama Rak</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
             <th>Tahun Terbit</th>
@@ -18,6 +19,7 @@
         @foreach($buku as $b)
         <tr>
             <td>{{ $b -> id_buku }}</td>
+            <td>{{ $b-> rak -> nama_rak }}</td>
             <td>{{ $b -> judul_buku }}</td>
             <td>{{ $b -> penerbit }}</td>
             <td>{{ $b -> tahun_terbit }}</td>

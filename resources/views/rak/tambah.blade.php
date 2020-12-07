@@ -16,10 +16,6 @@
                     <label for="exampleInputEmail1">Lokasi Rak</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="lokasi_rak" required="required">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">ID Buku</label>
-                    <select name="id_buku" required="required">@foreach ($buku as $b => $value)<option value="{{ $b }}">{{$value}}</option>@endforeach</select>
-                </div>
               <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
 @endsection

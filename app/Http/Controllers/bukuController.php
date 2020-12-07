@@ -22,14 +22,14 @@ class bukuController extends Controller
         );
         
         // mengirim data buku ke view master
-        return view('/buku/buku',compact('rak','buku'),$data);
+        return view('/buku/buku',['buku' => $buku,'rak' => $rak],$data);
     }
 
     public function tambah()
     {
         $buku = Buku::all();
-        $rak = Rak::all();
-        
+        $rak = DB::table('rak')->pluck('nama_rak','id_rak');
+    
         $data = array(
             'menu' => 'buku',
             'submenu' => ''
@@ -42,6 +42,7 @@ class bukuController extends Controller
     {
         DB::table('buku')->insert([
             'id_buku' => $request ->id_buku,
+            'id_rak' => $request -> id_rak,
             'judul_buku' => $request ->judul_buku,
             'penerbit' => $request ->penerbit,
             'tahun_terbit' => $request ->tahun_terbit,
@@ -53,8 +54,8 @@ class bukuController extends Controller
 
     public function edit($id_buku)
     {
-        $rak = Rak::all();
         $buku = DB::table('buku')->where('id_buku',$id_buku)->get();
+        $rak = DB::table('rak')->pluck('nama_rak','id_rak');
         $data = array(
             'menu' => 'buku',
             'submenu' => ''
@@ -66,6 +67,7 @@ class bukuController extends Controller
     public function update(Request $request,$id)
     {
         DB::table('buku')->where('id_buku',$id) -> update([
+            'id_rak' => $request ->id_rak,
             'judul_buku' => $request ->judul_buku,
             'penerbit' => $request ->penerbit,
             'tahun_terbit' => $request ->tahun_terbit,

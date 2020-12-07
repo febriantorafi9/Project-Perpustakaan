@@ -9,7 +9,7 @@
             @foreach($buku as $b)
             <form action="/buku/update/{{$b->id_buku}}" method="get">
                 {{ csrf_field() }}
-                    <div class="form-group">
+                  <div class="form-group">
                         <label for="exampleInputEmail1">Nama Rak</label>
                         <select name="id_rak" required="required">@foreach ($rak as $r => $value)<option value="{{ $r }}">{{$value}}</option>@endforeach</select>
                     </div>

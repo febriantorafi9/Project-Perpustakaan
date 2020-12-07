@@ -21,9 +21,9 @@ Route::get('/',function (){
     return view('welcome');
 });
 
-Route::get('/home',function (){
-    return view('home');
-});
+Route::match(["get","post"],"/register",function(){
+    return redirect('login');
+})->name("register");
 
 Route::get('login', 'HomeController@index');
 

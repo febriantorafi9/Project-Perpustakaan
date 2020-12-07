@@ -10,7 +10,7 @@ class Buku extends Model
     use SoftDeletes;
     protected $table = 'buku';
     protected $primaryKey = 'id_buku';
-    protected $fillable = ['judul_buku', 'penerbit', 'tahun_terbit', 'stok'];
+    protected $fillable = ['id_rak','judul_buku', 'penerbit', 'tahun_terbit', 'stok'];
     public $timestamps = false;
 
     public function peminjamanBuku(){
@@ -22,7 +22,7 @@ class Buku extends Model
     }
 
     public function rak(){
-        return $this->hasMany(Rak::class,'id_buku');
+        return $this->belongsTo(Rak::class,'id_rak');
     }
 
 }

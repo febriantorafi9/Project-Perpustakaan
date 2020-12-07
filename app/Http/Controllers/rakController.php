@@ -9,7 +9,7 @@ use App\Buku;
 
 class rakController extends Controller
 {
-    public function rak(Request $request)
+    public function rak()
     {
         //$rak = DB::table('rak') -> get();
         $rak = Rak::all();
@@ -20,7 +20,7 @@ class rakController extends Controller
             'submenu' => ''
         );
 
-        return view('/rak/rak',compact('rak','buku'),$data);
+        return view('/rak/rak',['rak' => $rak,'buku' => $buku],$data);
     }
 
     public function tambah()
@@ -40,7 +40,6 @@ class rakController extends Controller
             'id_rak' => $request->id_rak,
             'nama_rak' => $request->nama_rak,
             'lokasi_rak' => $request->lokasi_rak,
-            'id_buku' => $request->id_buku
         ]);
         //mengalihkan ke halaman rak
         return redirect('/rak');
@@ -60,7 +59,7 @@ class rakController extends Controller
     {
         DB::table('rak')->where('id_rak',$id) -> update([
             'nama_rak' => $request ->nama_rak,
-            'lokasi_rak' => $request ->lokasi_rak
+            'lokasi_rak' => $request ->lokasi_rak,
         ]);
         return redirect('/rak');
     }
