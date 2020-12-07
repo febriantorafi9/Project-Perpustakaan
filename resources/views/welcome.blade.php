@@ -81,18 +81,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Hello,world!
+                    Selamat datang di web Ruang Baca Pras dan Rafi
+                </div>
+
+                <div class="display-1">
+                        Meet our creator :
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://www.instagram.com/febriantorafn9/">Instagram Rafi</a>
+                    <a href="https://www.instagram.com/prasaja_mn/">Instagram Pras</a>
                 </div>
             </div>
         </div>
