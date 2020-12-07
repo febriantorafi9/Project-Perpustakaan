@@ -46,7 +46,7 @@
     <div class="float-right d-none d-sm-block">
       <b></b>
     </div>
-    <strong>Copyright &copy; 2020 <a href="http://adminlte.io">Prasaja dan Rafi</a>.</strong> All rights
+    <strong>Copyright &copy; 2020 <a href="#">Prasaja dan Rafi</a>.</strong> All rights
     reserved.
   </footer>
 
