@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Peminjaman;
+use App\Buku;
+use App\Petugas;
+use App\Anggota;
 
 class roleController extends Controller
 {
@@ -44,7 +48,7 @@ class roleController extends Controller
         return view('/buku/buku',['buku' => $buku,'rak' => $rak],$data);
     }
     
-    public function petugas()
+    public function petugas(Request $request)
     {
         $petugas = Petugas::all();
         $data = array(
@@ -58,26 +62,80 @@ class roleController extends Controller
 
     public function rak()
     {
-        return view('rak/rak');
+        $rak = Rak::all();
+        $buku = Buku::all();
+
+        $data = array(
+            'menu' => 'rak',
+            'submenu' => ''
+        );
+
+        return view('/rak/rak',['rak' => $rak,'buku' => $buku],$data);
     }
 
     public function peminjaman()
     {
-        return view('peminjaman/peminjaman');
+        $peminjaman = Peminjaman::all();
+         $buku = Buku::all();
+         $petugas = Petugas::all();
+         $anggota = Anggota::all();
+
+         $data = array(
+	        'menu' => 'transaksi',
+	        'submenu' => 'peminjaman'
+         );
+ 
+         // mengirim data petugas ke view peminjaman
+         return view('/peminjaman/peminjaman',compact('buku','petugas','anggota','peminjaman'),$data);
     }
 
     public function pengembalian()
     {
-        return view('pengembalian/pengembalian');
+        $pengembalian = Pengembalian::all();
+         $buku = Buku::all();
+         $petugas = Petugas::all();
+         $anggota = Anggota::all();
+
+         $data = array(
+	        'menu' => 'transaksi',
+	        'submenu' => 'pengembalian'
+         );
+ 
+         // mengirim data petugas ke view peminjaman
+         return view('/pengembalian/pengembalian',compact('buku','petugas','anggota','pengembalian'),$data);
     }
 
     public function historypeminjaman()
     {
-        return view('history/historypeminjaman');
+        $peminjaman = Peminjaman::all();
+        $buku = Buku::all();
+        $petugas = Petugas::all();
+        $anggota = Anggota::all();
+
+        $data = array(
+	        'menu' => 'history',
+	        'submenu' => 'historypeminjaman'
+        );
+ 
+        // mengirim data petugas ke view peminjaman
+        return view('/history/historypeminjaman',compact('buku','petugas','anggota','peminjaman'),$data);
     }
 
     public function koleksi()
     {
-        return view('history/koleksibuku');
+        if($request -> has('cari')){
+            $buku = Buku::where('judul_buku','LIKE','%'.$request->cari.'%')->get();
+        }else{
+            $buku = Buku::all();
+        }
+        
+        $buku = Buku::all();
+        $data = array(
+            'menu' => 'history',
+            'submenu' => 'koleksibuku'
+        );
+
+        return view('/history/koleksibuku',['buku' => $buku],$data);
+
     }
 }
