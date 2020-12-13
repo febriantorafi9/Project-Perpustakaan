@@ -40,10 +40,12 @@
               </p>
             </a>
           <li class="nav-item has-treeview">
+          @if (auth()->user()->level=="admin")
+
           @if($menu == 'petugas')
-            <a href="/petugas" class="nav-link active">
+            <a href="{{route('petugas')}}" class="nav-link active">
   	        @else
-	            <a href="/petugas" class="nav-link">
+	            <a href="{{route('petugas')}}" class="nav-link">
 	            @endif
               <i class="nav-icon fas fa-user-tie"></i>
               <p>
@@ -53,9 +55,9 @@
           </li>
           <li class="nav-item has-treeview">
           @if($menu == 'anggota')
-          <a href="/anggota" class="nav-link active">
+          <a href="{{route('anggota')}}" class="nav-link active">
   	        @else
-	            <a href="/anggota" class="nav-link">
+	            <a href="{{route('anggota')}}" class="nav-link">
 	            @endif
               <i class="nav-icon fas fa-user-circle"></i>
               <p>
@@ -65,9 +67,9 @@
           </li>
           <li class="nav-item has-treeview">
           @if($menu == 'buku')
-            <a href="/buku" class="nav-link active">
+            <a href="{{route('buku')}}" class="nav-link active">
   	        @else
-	            <a href="/buku" class="nav-link">
+	            <a href="{{route('buku')}}" class="nav-link">
 	            @endif
               <i class="nav-icon fas fa-book"></i>
               <p>
@@ -77,9 +79,9 @@
           </li>
           <li class="nav-item has-treeview">
           @if($menu == 'rak')
-            <a href="/rak" class="nav-link active">
+            <a href="{{route('rak')}}" class="nav-link active">
   	        @else
-	            <a href="/rak" class="nav-link">
+	            <a href="{{route('rak')}}" class="nav-link">
 	            @endif
               <i class="nav-icon far fa-folder"></i>
               <p>
@@ -103,9 +105,9 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
               @if($submenu == 'peminjaman')
-                <a href="/peminjaman" class="nav-link active">
+                <a href="{{route('peminjaman')}}" class="nav-link active">
                 @else
-	                <a href="/peminjaman" class="nav-link">
+	                <a href="{{route('peminjaman')}}" class="nav-link">
 	                @endif
                   <i class="fas fa-book-open"></i>
                   <p>Peminjaman</p>
@@ -113,9 +115,9 @@
               </li>
               <li class="nav-item">
               @if($submenu == 'pengembalian')
-                <a href="/pengembalian" class="nav-link active">
+                <a href="{{route('pengembalian')}}" class="nav-link active">
                 @else
-	                <a href="/pengembalian" class="nav-link">
+	                <a href="{{route('pengembalian')}}" class="nav-link">
 	                @endif
                   <i class="fas fa-book-open"></i>
                   <p>Pengembalian</p>
@@ -136,11 +138,13 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+            @endif
+              
               <li class="nav-item">
               @if($submenu == 'historypeminjaman')
-                <a href="/historypeminjaman" class="nav-link active">
+                <a href="{{route('historypeminjaman')}}" class="nav-link active">
                 @else
-	                <a href="/historypeminjaman" class="nav-link">
+	                <a href="{{route('historypeminjaman')}}" class="nav-link">
 	                @endif
                   <i class='fas fa-file-alt'></i>
                   <p>History Peminjaman</p>
@@ -148,9 +152,9 @@
               </li>
               <li class="nav-item">
               @if($submenu == 'koleksibuku')
-                <a href="/koleksibuku" class="nav-link active">
+                <a href="{{route('koleksibuku')}}" class="nav-link active">
                 @else
-	                <a href="/koleksibuku" class="nav-link">
+	                <a href="{{route('koleksibuku')}}" class="nav-link">
 	                @endif
                   <i class='fas fa-book'></i>
                   <p>Koleksi Buku</p>

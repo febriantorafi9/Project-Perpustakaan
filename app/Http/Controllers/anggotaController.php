@@ -12,12 +12,14 @@ class anggotaController extends Controller
     {
         // mengambil data dari table anggota
         //$anggota = DB::table('anggota')->get();
-        if($request -> has('cari')){
+        /*if($request -> has('cari')){
             $anggota = Anggota::where('nama_anggota','LIKE','%'.$request->cari.'%')->get();
         }else{
             $anggota = Anggota::all();
         }
-
+        */
+        $anggota = Anggota::all();
+        
         $data = array(
             'menu' => 'anggota',
             'submenu' => ''

@@ -103,3 +103,39 @@ route::get('koleksibuku','koleksibukuController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+route::group(['middleware' => ['auth','ceklevel:admin']], function () {
+    route::get('/anggota','anggotaController@anggota')->name('anggota');
+    route::get('/anggota/tambah','anggotaController@tambah')->name('anggota');
+    route::get('/anggota/simpan','anggotaController@simpan')->name('anggota');
+    route::get('/anggota/edit/{id_anggota}','anggotaController@edit')->name('anggota');
+    route::get('/anggota/update/{id_anggota}','anggotaController@update')->name('anggota');
+    route::get('/anggota/hapus/{id_anggota}','anggotaController@hapus')->name('anggota');
+
+    route::get('/petugas','petugasController@petugas')->name('petugas');
+    route::get('/petugas/tambah','petugasController@tambah')->name('petugas');
+    route::get('/petugas/simpan','petugasController@simpan')->name('petugas');
+    route::get('/petugas/edit/{id_petugas}','petugasController@edit')->name('petugas');
+    route::get('/petugas/update/{id_petugas}','petugasController@update')->name('petugas');
+    route::get('/petugas/hapus/{id_petugas}','petugasController@hapus')->name('petugas');
+
+    route::get('/buku','bukuController@buku')->name('buku');
+    route::get('/buku/tambah','bukuController@tambah')->name('buku');
+    route::get('/buku/simpan','bukuController@simpan')->name('buku');
+    route::get('/buku/edit/{id_buku}','bukuController@edit')->name('buku');
+    route::get('/buku/update/{id_buku}','bukuController@update')->name('buku');
+    route::get('/buku/hapus/{id_buku}','bukuController@hapus')->name('buku');
+    route::get('/buku/cari','bukuController@cari')->name('buku');
+
+    route::get('/rak','roleController@rak')->name('rak');
+
+    route::get('/pengembalian','roleController@pengembalian')->name('pengembalian');
+
+    route::get('/peminjaman','roleController@peminjaman')->name('peminjaman');
+});
+
+route::group(['middleware' => ['auth','ceklevel:admin,user']], function () {
+    route::get('beranda','roleController@index');
+    route::get('/historypeminjaman','roleController@historypeminjaman')->name('historypeminjaman');
+    route::get('/koleksibuku','roleController@koleksibuku')->name('koleksibuku');
+});
