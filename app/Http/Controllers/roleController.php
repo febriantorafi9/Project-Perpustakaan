@@ -121,7 +121,7 @@ class roleController extends Controller
         return view('/history/historypeminjaman',compact('buku','petugas','anggota','peminjaman'),$data);
     }
 
-    public function koleksi()
+    public function koleksibuku(Request $request)
     {
         if($request -> has('cari')){
             $buku = Buku::where('judul_buku','LIKE','%'.$request->cari.'%')->get();
@@ -129,7 +129,6 @@ class roleController extends Controller
             $buku = Buku::all();
         }
         
-        $buku = Buku::all();
         $data = array(
             'menu' => 'history',
             'submenu' => 'koleksibuku'
