@@ -103,3 +103,18 @@ route::get('koleksibuku','koleksibukuController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+route::group(['middleware' => ['auth','ceklevel:admin']], function () {
+    route::get('/anggota','anggotaController@anggota')->name('anggota');
+    route::get('/petugas','petugasController@petugas')->name('petugas');
+    route::get('/buku','bukuController@buku')->name('buku');
+    route::get('/rak','rakController@rak')->name('rak');
+    route::get('/pengembalian','pengembalianController@pengembalian')->name('pengembalian');
+    route::get('/peminjaman','peminjamanController@peminjaman')->name('peminjaman');
+});
+
+route::group(['middleware' => ['auth','ceklevel:admin,user']], function () {
+    route::get('beranda','roleController@index');
+    route::get('/historypeminjaman','roleController@historypeminjaman')->name('historypeminjaman');
+    route::get('/koleksibuku','roleController@koleksibuku')->name('koleksibuku');
+});

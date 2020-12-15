@@ -6,12 +6,12 @@
 	<a href="/anggota/tambah" class="btn btn-success">+ Tambah Anggota Baru</a>
 	<br/>
 	<br/>
-	<div class="search-container">
+	<!--<div class="search-container">
         <form method="GET" action="/anggota">
             <input type="text" name ="cari" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-    </div>
+    </div>-->
 	<br/>
 	<table class="table table-striped table-dark">
 		<tr>

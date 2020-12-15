@@ -12,12 +12,13 @@ class petugasController extends Controller
         
         // mengambil data dari table petugas
         //$petugas = DB::table('petugas')->get();
-        if($request -> has('cari')){
+        /*if($request -> has('cari')){
             $petugas = Petugas::where('nama_petugas','LIKE','%'.$request->cari.'%')->get();
         }else{
             $petugas = Petugas::all();
-        }
+        }*/
 
+        $petugas = Petugas::all();
         $data = array(
             'menu' => 'petugas',
             'submenu' => ''
