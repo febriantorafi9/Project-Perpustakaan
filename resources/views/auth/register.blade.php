@@ -30,15 +30,15 @@
       <p class="login-box-msg">Registrasi Terlebih Dahulu!!</p>
 
       <form action="{{route('register')}}" method="post">
-      {{ csrf_field() }}
+      @csrf
 
         <div class="input-group mb-3">
-          <input id="name" name="name" value="{{ old('name') }}" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Full name">
-          @error('name')
-              <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-              </span>
-          @enderror
+          <input type="text" class="form-control form-control-user {{$errors->has('name')?'is-invalid':''}}" id="exampleFirstName" placeholder="Full Name" name="name" value="{{old('name')}}">
+          @if($errors->has('name'))
+            <div class="invalid-feedback">
+              {{$errors->first('name')}}
+            </div>
+          @endif
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -47,11 +47,11 @@
         </div>
 
         <div class="input-group mb-3">
-          <input type="email" id="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
-          @if ($errors->has('email'))
-            <span class="help-block" role="alert">
-              <strong>{{ $errors->first('email') }}</strong>
-            </span>
+          <input type="email" class="form-control form-control-user {{$errors->has('email')?'is-invalid':''}}" id="exampleInputEmail" placeholder="Email Address" name="email" value="{{old('email')}}">
+          @if($errors->has('email'))
+            <div class="invalid-feedback">
+              {{$errors->first('email')}}
+            </div>
           @endif
           <div class="input-group-append">
             <div class="input-group-text">
@@ -59,12 +59,27 @@
             </div>
           </div>
         </div>
-        <div class="input-group mb-3 {{ $errors->has('password') ? ' has-error' : ''}}">
-          <input id="password" value="{{ old('password') }}" name="password" type="password" class="form-control" placeholder="Password">
-          @if ($errors->has('password'))
-              <span class="help-block" role="alert">
-                <strong>{{ $errors->first('password') }}</strong>
-              </span>
+        
+        <div class="input-group mb-3">
+          <input type="password" class="form-control form-control-user {{$errors->has('password ')?'is-invalid':''}}" id="exampleInputPassword" placeholder="Password" name="password">
+          @if($errors->has('password'))
+            <div class="invalid-feedback">
+              {{$errors->first('password')}}
+            </div>
+          @endif
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>   
+        </div>
+        
+        <div class="input-group mb-3">
+          <input type="password" class="form-control form-control-user {{$errors->has('password_confirmation')?'is-invalid':''}}" id="exampleRepeatPassword" placeholder="Repeat Password" name="password_confirmation">
+          @if($errors->has('password_confirmation'))
+            <div class="invalid-feedback">
+                {{$errors->first('password_confirmation')}}
+            </div>
           @endif
           <div class="input-group-append">
             <div class="input-group-text">
@@ -72,14 +87,19 @@
             </div>
           </div>
         </div>
-        <div class="input-group mb-3">
-          <input id="password-confirm" name="password_confirmation" type="password" class="form-control" placeholder="Retype password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
+        
+        <div class="form-group">
+          <legend>Pilih Sebagai :</legend>
+          <div>
+            <input type="checkbox" id="exampleInputEmail" name="role" value="admin">
+            <label for="L">Admin</label>
+          </div>
+          <div>
+            <input type="checkbox" id="exampleInputEmail" name="role" value="user">
+            <label for="P">User</label>
           </div>
         </div>
+        
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">

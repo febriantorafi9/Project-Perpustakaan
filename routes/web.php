@@ -104,6 +104,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     route::get('/anggota','anggotaController@anggota')->name('anggota');
     route::get('/petugas','petugasController@petugas')->name('petugas');
