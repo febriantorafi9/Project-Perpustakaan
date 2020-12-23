@@ -40,7 +40,7 @@
               </p>
             </a>
           <li class="nav-item has-treeview">
-          @if (auth()->user()->level=="admin")
+          @if (auth()->user()->role=="admin")
 
           @if($menu == 'petugas')
             <a href="{{route('petugas')}}" class="nav-link active">

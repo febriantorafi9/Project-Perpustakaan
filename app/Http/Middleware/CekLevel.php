@@ -13,11 +13,12 @@ class CekLevel
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, ...$levels)
+    public function handle($request, Closure $next, $role)
     {
-        if (in_array($request->user()->level,$levels)){
+        if ($request->user()->role == $role){
             return $next($request);
+        }else{
+            return redirect('/');
         }
-        return redirect('/');
     }
 }

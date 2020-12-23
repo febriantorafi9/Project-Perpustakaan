@@ -91,12 +91,12 @@
         <div class="form-group">
           <legend>Pilih Sebagai :</legend>
           <div>
-            <input type="checkbox" id="exampleInputEmail" name="role" value="admin">
+            <input type="radio" id="exampleInputEmail" name="role" value="admin">
             <label for="L">Admin</label>
           </div>
           <div>
-            <input type="checkbox" id="exampleInputEmail" name="role" value="user">
-            <label for="P">User</label>
+            <input type="radio" id="exampleInputEmail" name="role" value="user">
+            <label for="P">Anggota</label>
           </div>
         </div>
         
