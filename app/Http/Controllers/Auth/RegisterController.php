@@ -55,9 +55,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required', 'string'],
         ]);
-        
-
-
     }   
 
     /**

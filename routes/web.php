@@ -98,11 +98,15 @@ route::get('peminjaman/hapus/{id_peminjaman}','peminjamanController@hapus');
 //History
 route::get('historypeminjaman','historypeminjamanController@index');
 
+//HistoryAnggota
+route::get('hispeminjaman','historypeminjamanController@HistoryPeminjamanAnggota');
+
 //Koleksi
 route::get('koleksibuku','koleksibukuController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 route::group(['middleware' => ['auth','ceklevel:admin']], function () {    
     route::get('/anggota','anggotaController@anggota')->name('anggota');
@@ -111,11 +115,9 @@ route::group(['middleware' => ['auth','ceklevel:admin']], function () {
     route::get('/rak','rakController@rak')->name('rak');
     route::get('/pengembalian','pengembalianController@pengembalian')->name('pengembalian');
     route::get('/peminjaman','peminjamanController@peminjaman')->name('peminjaman');
-    route::get('/historypeminjaman','historypeminjamanController@index')->name('historypeminjaman');
-    route::get('/koleksibuku','koleksibukuController@index')->name('koleksibuku');
 });
 
+route::get('/historypeminjaman','historypeminjamanController@index')->name('historypeminjaman');
+route::get('/koleksibuku','koleksibukuController@index')->name('koleksibuku');
 route::group(['middleware' => ['auth','ceklevel:anggota']], function () {
-    route::get('/historypeminjaman','historypeminjamanController@index')->name('historypeminjaman');
-    route::get('/koleksibuku','koleksibukuController@index')->name('koleksibuku');
 });

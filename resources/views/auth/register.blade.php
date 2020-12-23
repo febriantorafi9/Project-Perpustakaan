@@ -95,7 +95,7 @@
             <label for="L">Admin</label>
           </div>
           <div>
-            <input type="radio" id="exampleInputEmail" name="role" value="user">
+            <input type="radio" id="exampleInputEmail" name="role" value="anggota">
             <label for="P">Anggota</label>
           </div>
         </div>
