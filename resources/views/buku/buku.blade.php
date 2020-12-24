@@ -11,6 +11,7 @@
             <th>ID Buku</th>
             <th>Nama Rak</th>
             <th>Judul Buku</th>
+            <th>Deskripsi Buku</th>
             <th>Penerbit</th>
             <th>Tahun Terbit</th>
             <th>Stok</th>
@@ -21,6 +22,7 @@
             <td>{{ $b -> id_buku }}</td>
             <td>{{ $b-> rak -> nama_rak }}</td>
             <td>{{ $b -> judul_buku }}</td>
+            <td>{{ $b -> deskripsi }}</td>
             <td>{{ $b -> penerbit }}</td>
             <td>{{ $b -> tahun_terbit }}</td>
             <td>{{ $b -> stok }}</td>

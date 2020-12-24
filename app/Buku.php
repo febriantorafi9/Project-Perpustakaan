@@ -10,7 +10,7 @@ class Buku extends Model
     use SoftDeletes;
     protected $table = 'buku';
     protected $primaryKey = 'id_buku';
-    protected $fillable = ['id_rak','judul_buku', 'penerbit', 'tahun_terbit', 'stok'];
+    protected $fillable = ['id_rak','judul_buku', 'deskripsi', 'penerbit', 'tahun_terbit', 'stok'];
     public $timestamps = false;
 
     public function peminjamanBuku(){

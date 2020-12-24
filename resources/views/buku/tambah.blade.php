@@ -17,6 +17,10 @@
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="judul_buku" required="required">
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Deskripsi</label>
+                    <textarea type="text" class="form-control" id="exampleInputEmail1" rows="5" aria-describedby="emailHelp" name="deskripsi" required="required"></textarea>
+                </div>
+                <div class="form-group">
                     <label for="exampleInputEmail1">Penerbit</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="penerbit" required="required">
                 </div>

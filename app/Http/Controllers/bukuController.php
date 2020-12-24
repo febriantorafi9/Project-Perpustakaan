@@ -44,6 +44,7 @@ class bukuController extends Controller
             'id_buku' => $request ->id_buku,
             'id_rak' => $request -> id_rak,
             'judul_buku' => $request ->judul_buku,
+            'deskripsi' => $request ->deskripsi,
             'penerbit' => $request ->penerbit,
             'tahun_terbit' => $request ->tahun_terbit,
             'stok' => $request ->stok
@@ -69,6 +70,7 @@ class bukuController extends Controller
         DB::table('buku')->where('id_buku',$id) -> update([
             'id_rak' => $request ->id_rak,
             'judul_buku' => $request ->judul_buku,
+            'deskripsi' => $request ->deskripsi,
             'penerbit' => $request ->penerbit,
             'tahun_terbit' => $request ->tahun_terbit,
             'stok' => $request ->stok
