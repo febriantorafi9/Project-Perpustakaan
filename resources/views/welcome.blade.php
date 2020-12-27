@@ -12,8 +12,12 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #111C29;
-                color: #636b6f;
+                background-image: url("../img/perpus3.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: white;
+                /*background-color: #111C29;*/
+                color: white;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -40,6 +44,11 @@
                 top: 18px;
             }
 
+            .loginbody 
+            {
+                
+            }
+
             .content {
                 text-align: center;
             }
@@ -49,7 +58,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
