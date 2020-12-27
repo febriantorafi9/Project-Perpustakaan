@@ -119,5 +119,6 @@ route::group(['middleware' => ['auth','ceklevel:admin']], function () {
 
 route::get('/historypeminjaman','historypeminjamanController@index')->name('historypeminjaman');
 route::get('/koleksibuku','koleksibukuController@index')->name('koleksibuku');
+
 route::group(['middleware' => ['auth','ceklevel:anggota']], function () {
 });
