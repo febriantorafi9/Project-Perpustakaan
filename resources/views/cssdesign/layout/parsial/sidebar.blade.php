@@ -40,7 +40,7 @@
               </p>
             </a>
           <li class="nav-item has-treeview">
-          @if (auth()->user()->level=="admin")
+          @if (auth()->user()->role=="admin")
 
           @if($menu == 'petugas')
             <a href="{{route('petugas')}}" class="nav-link active">
@@ -140,12 +140,21 @@
             <ul class="nav nav-treeview">
             @endif
               
+          
               <li class="nav-item">
               @if($submenu == 'historypeminjaman')
-                <a href="{{route('historypeminjaman')}}" class="nav-link active">
+              @if (auth()->user()->role=="anggota")
+                <a href="hispeminjaman" class="nav-link active">
                 @else
-	                <a href="{{route('historypeminjaman')}}" class="nav-link">
-	                @endif
+                  <a href="{{route('historypeminjaman')}}" class="nav-link active">
+                @endif
+                @else
+                @if (auth()->user()->role=="anggota")
+                <a href="hispeminjaman" class="nav-link">
+                  @else
+                  <a href="{{route('historypeminjaman')}}" class="nav-link">
+                  @endif
+	            @endif
                   <i class='fas fa-file-alt'></i>
                   <p>History Peminjaman</p>
                 </a>

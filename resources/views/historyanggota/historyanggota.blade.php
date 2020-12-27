@@ -2,10 +2,8 @@
 
 @section("konten")
 <h3>Data History Peminjaman</h3>
+<br>
 
-	
-	<br/>
- 
 	<table class="table table-striped table-dark">
 		<tr>
             <th>ID Peminjaman</th>
@@ -15,14 +13,14 @@
 			<th>Tgl Pinjam</th>
             <th>Tgl Kembali</th>
 		</tr>
-		@foreach($peminjaman as $m)
+		@foreach($hispeminjaman as $h)
 		<tr>
-			<td>{{ $m->id_peminjaman }}</td>
-			<td>{{ $m->buku->judul_buku }}</td>
-			<td>{{ $m->petugas->nama_petugas }}</td>
-			<td>{{ $m->anggota->nama_anggota }}</td>
-            <td>{{ $m->tgl_pinjam }}</td>
-            <td>{{ $m->tgl_kembali }}</td>
+			<td>{{ $h->id_peminjaman }}</td>
+			<td>{{ $h->judul_buku }}</td>
+			<td>{{ $h->nama_petugas }}</td>
+			<td>{{ $h->nama_anggota }}</td>
+            <td>{{ $h->tgl_pinjam }}</td>
+            <td>{{ $h->tgl_kembali }}</td>
 		</tr>
 		@endforeach
 	</table>

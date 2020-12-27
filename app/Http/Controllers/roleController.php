@@ -17,8 +17,9 @@ class roleController extends Controller
     */
     public function index()
     {
-        $var_nama = "Admin";
-        return view('home1',compact('var_nama'));
+        if (Auth::user()->role == "admin") {
+            return redirect('/home1');
+        }
     }
 
     public function anggota()
