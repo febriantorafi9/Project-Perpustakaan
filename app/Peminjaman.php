@@ -10,7 +10,7 @@ class Peminjaman extends Model
     use SoftDeletes;
     protected $table = 'peminjaman';
     protected $primaryKey = 'id_peminjaman';
-    protected $fillable = ['id_buku','id_petugas','id_anggota','tgl_pinjam','tgl_kembali'];
+    protected $fillable = ['id_buku','id_petugas','id_anggota','tgl_pinjam','tgl_kembali','status_pinjam'];
     public $timestamps = false;
     protected $date = ['deleted_at'];
     
@@ -22,6 +22,9 @@ class Peminjaman extends Model
     }
     public function petugas(){
         return $this->belongsTo(Petugas::class,'id_petugas');
+    }
+    public function pengembalian(){
+        return $this->hasMany(Pengembalian::class,'id_pengembalian');
     }
 
     

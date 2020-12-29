@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Peminjaman;
+use App\Pengembalian;
 use App\Buku;
 use App\Petugas;
 use App\Anggota;
@@ -16,6 +17,7 @@ class peminjamanController extends Controller
          // mengambil data dari table peminjaman
          //$peminjaman = DB::table('peminjaman')->get();
          $peminjaman = Peminjaman::all();
+         $pengembalian = Pengembalian::all();
          $buku = Buku::all();
          $petugas = Petugas::all();
          $anggota = Anggota::all();
@@ -26,7 +28,7 @@ class peminjamanController extends Controller
          );
  
          // mengirim data petugas ke view peminjaman
-         return view('/peminjaman/peminjaman',compact('buku','petugas','anggota','peminjaman'),$data);
+         return view('/peminjaman/peminjaman',compact('buku','petugas','anggota','peminjaman','pengembalian'),$data);
     
     }
 
@@ -52,10 +54,31 @@ class peminjamanController extends Controller
             'id_petugas'=>$request->id_petugas,
             'id_anggota'=>$request->id_anggota,
             'tgl_pinjam'=>$request->tgl_pinjam,
-            'tgl_kembali'=>$request->tgl_kembali
+            'tgl_kembali'=>$request->tgl_kembali,
+            'status_pinjam' => '0'
         ]);
         // mengalihkan ke halaman peminjaman
         return redirect('/peminjaman');
+    }
+
+    public function simpan_pengembalian(Request $request, $id_peminjaman){
+        $now = now();
+        $peminjaman = peminjaman::find($id_peminjaman);
+        $peminjaman->status_pinjam = 1;
+        $peminjaman->save();
+        DB::table('buku')->where('id_buku',$peminjaman->id_buku)->increment('stok');
+
+        Pengembalian::create([
+            'id_peminjaman' => $id_peminjaman,
+            'id_buku' => $peminjaman->id_buku,
+            'id_petugas' => $peminjaman->id_petugas,
+            'id_anggota' => $peminjaman->id_anggota,
+            'tgl_kembali' => $now
+        ]);
+        
+        
+
+        return redirect('/pengembalian')->with(['success' => 'Tambah Berhasil']);//notifikasi
     }
 
     public function edit($id_peminjaman)
