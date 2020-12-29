@@ -93,6 +93,7 @@ route::get('peminjaman/tambah','peminjamanController@tambah');
 route::get('peminjaman/simpan','peminjamanController@simpan');
 route::get('peminjaman/edit/{id_peminjaman}','peminjamanController@edit');
 route::get('peminjaman/update/{id_peminjaman}','peminjamanController@update');
+Route::get('peminjaman/simpan_pengembalian/{id_peminjaman}', 'PeminjamanController@simpan_pengembalian');
 route::get('peminjaman/hapus/{id_peminjaman}','peminjamanController@hapus');
 
 //History
