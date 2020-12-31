@@ -100,7 +100,7 @@
             <li class="nav-item dropdown no-arrow">
               <div class="user-panel d-flex">
                 <div class="image">
-                  <img src="img/user.ico" class="img-circle elevation-1" alt="User Image">
+                  <img src="{{ Auth::user()->avatar}}" class="img-circle elevation-1" alt="User Image">
                 </div>
               </div>
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

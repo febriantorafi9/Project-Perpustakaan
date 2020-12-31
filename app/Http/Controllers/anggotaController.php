@@ -8,7 +8,7 @@ use App\Anggota;
 
 class anggotaController extends Controller
 {
-    public function anggota(Request $request)
+    public function anggota()
     {
         // mengambil data dari table anggota
         //$anggota = DB::table('anggota')->get();

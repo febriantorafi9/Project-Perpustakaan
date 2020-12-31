@@ -29,7 +29,7 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Registrasi Terlebih Dahulu!!</p>
 
-      <form action="{{route('register')}}" method="post">
+      <form action="{{route('register')}}" method="post" enctype="multipart/form-data">
       @csrf
 
         <div class="input-group mb-3">
@@ -44,6 +44,18 @@
               <span class="fas fa-user"></span>
             </div>
           </div>
+        </div>
+
+        <div class="form-group">
+          <label for="avatar" class="col-form-label text-md-right"> Please Uploud Your Avatar</label><br>
+          <span class="text-small text-info"> Not required</span>
+
+          <input type="file" class="form-control form-control-user {{$errors->has('avatar')?'is-invalid':''}}" id="exampleFirstName" name="avatar">
+          @if($errors->has('avatar'))
+            <div class="invalid-feedback">
+              {{$errors->first('avatar')}}
+            </div>
+          @endif
         </div>
 
         <div class="input-group mb-3">
